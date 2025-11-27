@@ -203,8 +203,8 @@ const AboutPage = () => {
                   className="relative w-full h-96 object-cover rounded-3xl shadow-2xl border-4 border-orange-300/40 group-hover:border-orange-300/60 transition-all duration-300"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-3xl">
-                  {/* <p className="text-white font-bold text-xl text-center">Shri Satish Chandra Sharma</p>
-                  <p className="text-orange-300 text-center">Founder & Managing Director</p> */}
+                  <p className="text-white font-bold text-xl text-center">Shri Satish Chandra Sharma</p>
+                  <p className="text-orange-300 text-center">Founder & Managing Director</p>
                 </div>
               </div>
 
