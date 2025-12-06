@@ -12,6 +12,7 @@ const Company1 = lazy(() => import('./pages/ShriShyamEnterprises.jsx'));
 const Company2 = lazy(() => import('./pages/PRINCEGLOBALCOMPANY.jsx'));
 const Company3 = lazy(() => import('./pages/KRISHNAEVEHICLETRADERS.jsx'));
 const Company4 = lazy(() => import('./pages/KRISHNAPOWERSOLUTIONPRIVATELIMITED.jsx'));
+const Company5 = lazy(() => import('./pages/KRISHNAERICHSAWENTER.jsx'));
 const MediaPage = lazy(()=>import('./pages/MediaPage.jsx'))
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/company2" element={<Company2 />} />
           <Route path="/company3" element={<Company3 />} />
           <Route path="/company4" element={<Company4 />} />
+          <Route path="/company5" element={<Company5 />} />
         </Routes>
       </Suspense>
     </ScrollBar>
