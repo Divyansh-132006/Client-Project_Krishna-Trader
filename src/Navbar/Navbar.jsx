@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import fiverrlogo from "../assets/Logooo-removebg-preview.png";
+import fiverrlogo from "../assets/logo/Logooo-removebg-preview (1).png";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

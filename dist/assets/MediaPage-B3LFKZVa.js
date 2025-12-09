@@ -1,0 +1,1 @@
+import{j as e}from"./index-CqQepkqm.js";const a=()=>e.jsx("div",{className:"border-4 mt-4 rounded-4xl ml-4 mr-4",children:e.jsx("h1",{className:"text-4xl text-black m-12 pt-6 py-6 text-center",children:"Page Under Development and Maintenance"})});export{a as default};

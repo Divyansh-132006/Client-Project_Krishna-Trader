@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
-import { Factory, Zap, Globe, Award, Phone, Mail, MapPin, CheckCircle, Truck, Shield, Settings } from 'lucide-react';
+import {
+  Factory, Zap, Globe, Award, Phone, Mail, MapPin, CheckCircle, Truck,
+  Shield, Settings, Users, TrendingUp, Star, Lock, Smartphone, Bike,
+  Wrench
+} from 'lucide-react';
+
+import tyreImage from "../assets/auto/frontview.png";
+import headlightImage from "../assets/auto/lowerview.png";
+import tailLightImage from "../assets/auto/backview.png";
+import shockersImage from "../assets/auto/sideview.png";
 
 export default function Company5() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -8,19 +17,67 @@ export default function Company5() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const features = [
+  const coreStrengths = [
     { icon: <Shield className="w-6 h-6" />, title: "Strong Chassis", desc: "High-grade iron construction that withstands up to 500kg load" },
     { icon: <Settings className="w-6 h-6" />, title: "Superior Suspension", desc: "Comfortable ride even on rough terrain" },
     { icon: <Zap className="w-6 h-6" />, title: "Long-Life Battery", desc: "Compatible with multiple battery brands including lithium options" },
     { icon: <Truck className="w-6 h-6" />, title: "High Load Capacity", desc: "Ideal for commercial use with 400-500kg capacity" }
   ];
 
-  const stats = [
+  const companyStats = [
     { value: "10+", label: "Years Experience" },
     { value: "50K+", label: "Annual Production" },
     { value: "95%", label: "Customer Satisfaction" },
     { value: "10K+", label: "Units Exported" }
   ];
+
+  
+  const newFeatures = [
+    { icon: <Shield className="w-6 h-6" />, title: "Advanced BMS", desc: "Smart Battery Protection" },
+    { icon: <Zap className="w-6 h-6" />, title: "1000W Power", desc: "Powerful Motor" },
+    { icon: <TrendingUp className="w-6 h-6" />, title: "80-100 KM", desc: "Long Mileage" },
+    { icon: <Award className="w-6 h-6" />, title: "24/7 Support", desc: "Instant Service" }
+  ];
+
+  const salesStats = [
+    { number: "500+", label: "Dealer Network", icon: <Users className="w-8 h-8" /> },
+    { number: "15,000+", label: "Units Sold", icon: <TrendingUp className="w-8 h-8" /> },
+    { number: "98%", label: "Customer Satisfaction", icon: <Star className="w-8 h-8" /> }
+  ];
+
+
+
+  const imageFeatures = [
+    {
+      src:tyreImage,
+      title: "",
+      subtitle: "",
+      width: 400,
+      height: 400
+    },
+    {
+      src: headlightImage,
+      title: "",
+      subtitle: "",
+      width: 300,
+      height: 250
+    },
+    {
+      src: tailLightImage,
+      title: "",
+      subtitle: "",
+      width: 200,
+      height: 200
+    },
+    {
+      src: shockersImage,
+      title: "",
+      subtitle: "",
+      width: 250,
+      height: 350
+    },
+  ];
+
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -35,14 +92,14 @@ export default function Company5() {
             India's Roads, India's Strength — We Build the Future of Transportation
           </p>
           <p className="text-lg max-w-4xl mx-auto leading-relaxed">
-            Inspired by the Make in India spirit, we manufacture sustainable, safe, and high-performance electric rickshaws 
+            Inspired by the Make in India spirit, we manufacture sustainable, safe, and high-performance electric rickshaws
             that promote eco-friendly mobility not only in India but worldwide.
           </p>
         </div>
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        
+
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8 hover:shadow-xl transition-shadow duration-300">
           <div className="flex items-center gap-3 mb-6">
             <Award className="w-8 h-8 text-emerald-700" />
@@ -52,21 +109,22 @@ export default function Company5() {
             <strong className="text-gray-900">Proprietor:</strong> Mr. Satish Chandra Sharma
           </p>
           <p className="text-gray-700 mb-6">
-            Under his leadership, the company is setting new standards every year. Mr. Sharma's objective is to 
-            <strong> "Make India the global center of e-mobility"</strong> and provide reliable products to customers. 
-            His experience has led the company to adopt technological innovations such as lithium battery integration 
+            Under his leadership, the company is setting new standards every year. Mr. Sharma's objective is to
+            <strong> "Make India the global center of e-mobility"</strong> and provide reliable products to customers.
+            His experience has led the company to adopt technological innovations such as lithium battery integration
             and solar charging support.
           </p>
           <blockquote className="border-l-4 border-emerald-700 bg-emerald-50 p-6 rounded-r-lg italic">
             <p className="text-gray-800 leading-relaxed">
-              "We don't just forge products, but the future of India's mobility. Our rickshaws not only create employment 
+              "We don't just forge products, but the future of India's mobility. Our rickshaws not only create employment
               but also protect the environment."
             </p>
           </blockquote>
         </section>
 
+        {/* Existing Company Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          {stats.map((stat, index) => (
+          {companyStats.map((stat, index) => (
             <div key={index} className="bg-emerald-50 rounded-xl p-6 text-center">
               <h3 className="text-4xl font-bold text-emerald-700 mb-2">{stat.value}</h3>
               <p className="text-gray-700 font-medium">{stat.label}</p>
@@ -77,16 +135,16 @@ export default function Company5() {
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8 hover:shadow-xl transition-shadow duration-300">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">2. Welcome to Krishna E-Rickshaw Enterprises</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
-            Where technology, quality, and Indian engineering converge. We don't just manufacture e-rickshaws — we create 
-            <strong> smart, sustainable, and future-oriented</strong> mobility solutions. Our vehicles are designed with 
+            Where technology, quality, and Indian engineering converge. We don't just manufacture e-rickshaws — we create
+            <strong> smart, sustainable, and future-oriented</strong> mobility solutions. Our vehicles are designed with
             Indian road challenges in mind, featuring high load capacity, low maintenance, and energy efficiency.
           </p>
           <p className="text-gray-700 leading-relaxed mb-6">
-            Every vehicle from our company is shipped to international markets with the same quality standards, helping us 
-            contribute towards making India a global center for e-mobility. Our focus is on customer satisfaction, and we 
+            Every vehicle from our company is shipped to international markets with the same quality standards, helping us
+            contribute towards making India a global center for e-mobility. Our focus is on customer satisfaction, and we
             prepare every product with precision and trust.
           </p>
-      
+
         </section>
 
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8 hover:shadow-xl transition-shadow duration-300">
@@ -124,18 +182,17 @@ export default function Company5() {
           </ul>
           <div className="bg-emerald-50 rounded-lg p-6">
             <p className="text-gray-900">
-              <strong>Our Plant:</strong> Modern manufacturing facility in Muzaffarnagar — where every vehicle is crafted 
-              with precision technology, including robotic assembly and quality testing. Our production capacity is 50,000+ 
+              <strong>Our Plant:</strong> Modern manufacturing facility in Muzaffarnagar — where every vehicle is crafted
+              with precision technology, including robotic assembly and quality testing. Our production capacity is 50,000+
               units annually, sufficient to meet market demand.
             </p>
           </div>
         </section>
 
-        {/* 4. Product Features */}
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8 hover:shadow-xl transition-shadow duration-300">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">4. Our E-Rickshaw Features</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">4. Core Product Strengths</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {features.map((feature, index) => (
+            {coreStrengths.map((feature, index) => (
               <div key={index} className="flex items-start gap-4 p-4 bg-emerald-50 rounded-lg">
                 <div className="bg-white p-3 rounded-lg text-emerald-700 shadow-sm">
                   {feature.icon}
@@ -149,12 +206,81 @@ export default function Company5() {
           </div>
         </section>
 
-        {/* 5. Market Reach */}
+        <section className="bg-white rounded-xl shadow-lg p-8 mb-8 hover:shadow-xl transition-shadow duration-300">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">5. Performance & Technology Highlights</h2>
+          <div className="grid md:grid-cols-4 gap-6">
+            {newFeatures.map((feature, index) => (
+              <div key={index} className="text-center p-4 border rounded-lg hover:border-emerald-500 transition">
+                <div className="flex justify-center mb-3 text-emerald-700">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-1">{feature.title}</h3>
+                <p className="text-gray-600 text-sm">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* New Sales Stats */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {salesStats.map((stat, index) => (
+            <div key={index} className="bg-emerald-700 text-white rounded-xl p-6 text-center shadow-lg">
+              <div className="flex items-center justify-center mb-2">
+                {stat.icon}
+              </div>
+              <h3 className="text-4xl font-bold mb-1">{stat.number}</h3>
+              <p className="font-medium text-emerald-100">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* 6. More Detailed Features (Integrated Section from user input) */}
+        <section className="max-w-7xl mx-auto px-4 mb-12">
+          <div
+            className="relative bg-cover bg-center rounded-2xl shadow-2xl p-8 md:p-12"
+            style={{
+              backgroundImage: "url('/placeholder-dark-scooter-bg.jpg')",
+              backgroundColor: 'rgba(0, 0, 0, 0.7)',
+              backgroundBlendMode: 'multiply',
+              minHeight: '400px',
+              color: 'white'
+            }}
+          >
+            <div className="absolute inset-0 bg-white opacity-90 rounded-2xl"></div>
+            <div className="relative z-10">
+              <h2 className="text-4xl font-bold text-gray-900 mb-8 border-l-4 border-emerald-700 pl-4 inline-block">
+                6. Advanced Vehicle Technology
+              </h2>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 border-b pb-2">Component Details</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {imageFeatures.map((item, idx) => (
+                  <div key={idx} className="flex flex-col items-center">
+                    <div className="w-full h-56 bg-white rounded-lg shadow-xl mb-3 flex items-center justify-center overflow-hidden border border-gray-200">
+                      {/* Note: In a real app, ensure image paths are correct */}
+                      <img
+                        src={item.src}
+                        alt={item.title}
+                        className="w-full h-full object-cover"
+                        width={item.width}
+                        height={item.height}
+                      />
+                    </div>
+                    <h4 className="text-lg font-bold text-gray-900 text-center">{item.title}</h4>
+                    <p className="text-sm text-gray-700 text-center">{item.subtitle}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* 7. Market Reach (Old 5) */}
         <section className="grid md:grid-cols-2 gap-6 mb-8">
           <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
             <div className="flex items-center gap-3 mb-6">
               <Globe className="w-8 h-8 text-emerald-700" />
-              <h2 className="text-2xl font-bold text-gray-900">5. National & International Reach</h2>
+              <h2 className="text-2xl font-bold text-gray-900">7. National & International Reach</h2>
             </div>
             <p className="text-gray-700 mb-4">Our business extends from India to international borders:</p>
             <ul className="space-y-3">
@@ -188,15 +314,16 @@ export default function Company5() {
           </div>
         </section>
 
-        {/* 6. OEM Manufacturing */}
+        {/* 8. OEM Manufacturing (Old 6) */}
         <section className="bg-white rounded-xl shadow-lg p-8 mb-8 hover:shadow-xl transition-shadow duration-300">
           <div className="flex items-center gap-3 mb-6">
             <Factory className="w-8 h-8 text-emerald-700" />
-            <h2 className="text-3xl font-bold text-gray-900">OEM Manufacturing</h2>
+            <h2 className="text-3xl font-bold text-gray-900">8. OEM Manufacturing</h2>
+
           </div>
           <p className="text-gray-700 mb-6">
-            Krishna E-Rickshaw Enterprises also provides OEM (Original Equipment Manufacturer) services. Many brands 
-            entrust us with manufacturing vehicles under their name, and we maintain premium quality standards aligned 
+            Krishna E-Rickshaw Enterprises also provides OEM (Original Equipment Manufacturer) services. Many brands
+            entrust us with manufacturing vehicles under their name, and we maintain premium quality standards aligned
             with their brand values.
           </p>
           <ul className="space-y-3">
@@ -219,10 +346,10 @@ export default function Company5() {
           </ul>
         </section>
 
-        {/* 7. Contact & Location */}
+        {/* 9. Contact & Location (Old 7) */}
         <section id="contact" className="bg-white rounded-xl shadow-lg p-8 mb-8 hover:shadow-xl transition-shadow duration-300">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8">7. Contact & Location</h2>
-          
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">9. Contact & Location</h2>
+
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <div className="inline-block bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold mb-4">
@@ -231,6 +358,7 @@ export default function Company5() {
               <p className="text-gray-700 mb-6">
                 Gumthal Road, Near Police Fire Station, Chandausi, Sambhal, Uttar Pradesh — 244412
               </p>
+
 
               <div className="inline-block bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-semibold mb-4">
                 Manufacturing Plant
@@ -243,7 +371,7 @@ export default function Company5() {
                 <p className="font-bold text-gray-900 mb-2">Proprietor</p>
                 <p className="text-gray-700">Mr. Satish Chandra Sharma</p>
               </div>
-              
+
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-emerald-700" />
                 <a href="tel:895646497" className="text-emerald-700 hover:text-emerald-800 font-medium">
@@ -265,8 +393,8 @@ export default function Company5() {
           </div>
 
           <div className="mt-8 text-center">
-            <a 
-              href="mailto:krishnagroup@gmail.com" 
+            <a
+              href="mailto:krishnagroup@gmail.com"
               className="inline-flex items-center gap-2 bg-emerald-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-emerald-800 transition-colors"
             >
               <Mail className="w-5 h-5" />
