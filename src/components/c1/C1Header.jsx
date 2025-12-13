@@ -9,7 +9,7 @@ const featuresData = [
 ];
 
 const C1Header = ({ handleDealershipClick }) => (
-  <header className="relative bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 text-white overflow-hidden">
+  <header className="relative bg-gradient-to-br from-violet-600 via-fuchsia-500 to-orange-500 text-white overflow-hidden">
     {/* Background effects */}
     <div className="absolute inset-0 bg-black opacity-10"></div>
     <div className="absolute inset-0" style={{

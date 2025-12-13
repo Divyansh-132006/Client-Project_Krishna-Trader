@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const companies = [
     {
-        emoji: "⚡",
+        emoji: "🛵",
         title: "SHRI SHYAM ENTERPRISES",
         description: "Built for Indian roads, powered by world-class technology.",
         slogan: "Power, Style, and Dealership Trust – TORA",
@@ -10,7 +10,7 @@ const companies = [
         label: "EV"
     },
     {
-        emoji: "🛡️",
+        emoji: "🌍",
         title: "PRINCE GLOBAL COMPANY",
         description: "The largest wholesaler of high-quality spare parts for electric and conventional vehicles.",
         slogan: "The right part for every vehicle, at the right time.",
@@ -18,7 +18,7 @@ const companies = [
         label: "RT"
     },
     {
-        emoji: "📈",
+        emoji: "🔋",
         title: "KRISHNA E-VEHICLE TRADERS",
         description: "Leading commercial hub for Electric Mobility (EV) and Solar Systems in Chandausi (Sambhal).",
         slogan: "Comprehensive energy solutions for a sustainable future.",
@@ -26,7 +26,7 @@ const companies = [
         label: "PE"
     },
     {
-        emoji: "👥",
+        emoji: "⚡",
         title: "KRISHNA POWER SOLUTION",
         description: "India's reliable name in power, technology, and global trade.",
         slogan: "Integrated solutions in EV manufacturing, International Trading, Industrial Services, and Government Projects.",
@@ -34,7 +34,7 @@ const companies = [
         label: "GB"
     },
     {
-        emoji: "⭐",
+        emoji: "🛺",
         title: "KRISHNA E-RICKSHAW ENTERPRISES",
         description: "Manufacturing sustainable, safe, and high-performance electric rickshaws.",
         slogan: "India's Roads, India's Strength — Building the Future of Transportation.",
@@ -127,7 +127,7 @@ function BusinessLanding() {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-yellow-100">
-            <div className="container mx-auto px-6 py-20">
+            <div className="container mx-auto px-6">
                 
                 {/* Header Section */}
                 <header className="text-center mb-20">

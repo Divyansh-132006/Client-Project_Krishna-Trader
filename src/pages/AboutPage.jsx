@@ -242,10 +242,10 @@ const AboutPage = () => {
                             </div>
 
                             {/* Vision Card */}
-                            <div className="bg-gradient-to-br from-orange-600 to-red-700 p-8 rounded-3xl shadow-xl border border-orange-400">
-                                <h3 className="text-2xl font-bold text-white mb-4">Vision & Mission</h3>
-                                <p className="text-orange-50 text-lg leading-relaxed">
-                                    Shri Sharma envisioned transforming India's traditional rickshaw industry into a modern, eco-friendly e-mobility ecosystem. His journey exemplifies the spirit of <span className="text-yellow-300 font-bold">Atmanirbhar Bharat</span>, bridging agricultural roots with cutting-edge green technology.
+                            <div className="bg-gray-100 p-8 rounded-3xl shadow-xl border border-orange-400">
+                                <h3 className="text-2xl font-bold text-black mb-4">Vision & Mission</h3>
+                                <p className="text-black text-lg leading-relaxed">
+                                    Shri Sharma envisioned transforming India's traditional rickshaw industry into a modern, eco-friendly e-mobility ecosystem. His journey exemplifies the spirit of <span className="text-black font-bold">Atmanirbhar Bharat</span>, bridging agricultural roots with cutting-edge green technology.
                                 </p>
                             </div>
 

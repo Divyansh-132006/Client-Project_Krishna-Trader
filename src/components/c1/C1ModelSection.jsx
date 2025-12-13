@@ -115,21 +115,21 @@ const C1ModelSection = () => (
   <>
     {/* First Card: SL (Accelerelo X-Pro) */}
     <ModelCard
-      modelName="SL (Accelerelo X-Pro)"
-      imageUrl='https://res.cloudinary.com/drgbysqgy/image/upload/v1765296561/Gemini_Generated_Image_7rv1ji7rv1ji7rv1_mq3baz.png'
+      modelName="SL "
+      imageUrl='https://res.cloudinary.com/drgbysqgy/image/upload/v1765431032/Gemini_Generated_Image_xy3ycjxy3ycjxy3y_c4rmx0.png'
       modelData={modelData["Accelerelo X-Pro"]}
     />
     
     {/* Second Card: DL (Accelerelo R14) */}
     <ModelCard
-      modelName="DL (Accelerelo R14)"
-      imageUrl='https://res.cloudinary.com/drgbysqgy/image/upload/v1765296476/DL_model_ygus0s.jpg'
+      modelName="DL "
+      imageUrl='https://res.cloudinary.com/drgbysqgy/image/upload/v1765431285/Gemini_Generated_Image_9yazwk9yazwk9yaz_hmvy2f.png'
       modelData={modelData["Accelerelo R14"]}
     />
     
     {/* Third Card: Tezus (Accelerelo +) */}
     <ModelCard
-      modelName="Tezus (Accelerelo +)"
+      modelName="Tezus "
       imageUrl='https://res.cloudinary.com/drgbysqgy/image/upload/v1765296605/tl_model_v7pffk.jpg'
       modelData={modelData["Accelerelo +"]}
     />

@@ -18,24 +18,19 @@ const Dealership = () => {
           "url('https://res.cloudinary.com/drgbysqgy/image/upload/v1765305950/Gemini_Generated_Image_b0uyugb0uyugb0uy_qmobib.png')",
       }}
     >
-      {/* Animated gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-green-900/40 to-black/80"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-green-900/40 to-black/70"></div>
       
-      {/* Animated accent circles */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-green-400/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
 
       <div className={`relative z-10 max-w-6xl w-full text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        {/* Glass card with enhanced styling */}
         <div className="bg-white/5 border border-white/10 backdrop-blur-xl shadow-[0_20px_80px_rgba(0,0,0,0.6)] px-6 md:px-12 py-12 rounded-3xl hover:shadow-[0_20px_80px_rgba(34,197,94,0.3)] transition-all duration-500">
           
-          {/* Logo/Badge */}
           <div className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-green-400/20 to-green-500/20 border border-green-400/40 rounded-full mb-6 animate-pulse">
             <Zap className="w-5 h-5 text-green-400" />
             <span className="text-green-300 font-bold text-sm tracking-wider">DEALERSHIP OPPORTUNITY</span>
           </div>
 
-          {/* Main Heading with gradient */}
           <h1 className="text-5xl md:text-7xl font-black bg-gradient-to-r from-white via-green-100 to-green-300 bg-clip-text text-transparent drop-shadow-2xl tracking-tight leading-tight">
             TORA Automotive
           </h1>
@@ -55,7 +50,7 @@ const Dealership = () => {
           </div>
 
           {/* CTA Banner */}
-          <div className="mt-6 p-4 bg-gradient-to-r from-green-500/20 to-green-600/20 border-2 border-green-400/50 rounded-xl backdrop-blur-sm hover:border-green-400 hover:scale-[1.02] transition-all duration-300 cursor-pointer group">
+          <div className="mt-6 p-4 border-2 border-green-400/50 rounded-xl backdrop-blur-sm hover:border-green-400 hover:scale-[1.02] transition-all duration-300 cursor-pointer group">
             <p className="text-white font-bold text-lg group-hover:text-green-300 transition-colors">
               ⚡ Ready to Electrify Your Business? Fill the Form to Apply for Dealership →
             </p>
@@ -63,26 +58,25 @@ const Dealership = () => {
 
           {/* Key Stats Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
-            <div className="p-6 bg-gradient-to-br from-green-500/10 to-green-600/10 border border-green-400/30 rounded-xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
+            <div className="p-6  border border-green-400/30 rounded-xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
               <TrendingUp className="w-10 h-10 text-green-400 mx-auto mb-3 group-hover:scale-110 transition-transform" />
               <h3 className="text-3xl font-black text-white mb-2">100%</h3>
               <p className="text-green-300 font-semibold">Return on Investment</p>
             </div>
 
-            <div className="p-6 bg-gradient-to-br from-green-500/10 to-green-600/10 border border-green-400/30 rounded-xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
+            <div className="p-6  to-green-600/10 border border-green-400/30 rounded-xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
               <Award className="w-10 h-10 text-green-400 mx-auto mb-3 group-hover:scale-110 transition-transform" />
               <h3 className="text-3xl font-black text-white mb-2">Best</h3>
               <p className="text-green-300 font-semibold">EVs in India</p>
             </div>
 
-            <div className="p-6 bg-gradient-to-br from-green-500/10 to-green-600/10 border border-green-400/30 rounded-xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
+            <div className="p-6 to-green-600/10 border border-green-400/30 rounded-xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
               <Shield className="w-10 h-10 text-green-400 mx-auto mb-3 group-hover:scale-110 transition-transform" />
               <h3 className="text-3xl font-black text-white mb-2">Premium</h3>
               <p className="text-green-300 font-semibold">Service Support</p>
             </div>
           </div>
 
-          {/* Expandable Feature Cards */}
           <div className="flex flex-col md:flex-row gap-4 mt-10 justify-center">
             
             <div
@@ -115,7 +109,7 @@ const Dealership = () => {
               onClick={() => setShowService(!showService)}
               className={`cursor-pointer flex flex-col px-6 py-5 rounded-2xl border-2 backdrop-blur-sm transition-all duration-500 flex-1
                 ${showService 
-                  ? "border-green-400 bg-gradient-to-br from-green-500/30 to-green-600/20 shadow-[0_10px_40px_rgba(34,197,94,0.4)] scale-[1.02]" 
+                  ? "border-green-400 bg-gradient-to-br from-green-400/30 to-green-600/20 shadow-[0_10px_40px_rgba(34,197,94,0.4)] scale-[1.02]" 
                   : "border-green-400/50 bg-white/5 hover:bg-white/10 hover:border-green-400 hover:scale-[1.02]"
                 }
               `}
@@ -138,7 +132,6 @@ const Dealership = () => {
             </div>
           </div>
 
-          {/* Main CTA Button */}
           <button
             onClick={() =>
               window.open(
@@ -151,7 +144,6 @@ const Dealership = () => {
             Apply For Dealership Now
           </button>
 
-          {/* Trust Indicators */}
           <div className="mt-8 flex flex-wrap justify-center gap-6 items-center text-gray-300 text-sm">
             <div className="flex items-center gap-2">
               <CheckCircle className="w-4 h-4 text-green-400" />

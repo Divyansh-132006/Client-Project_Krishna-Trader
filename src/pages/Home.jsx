@@ -17,7 +17,7 @@ const HomePage = () => {
         <link rel="canonical" href={seoConfig.url} />
       </Helmet>
 
-      <div className="relative w-full bg-gray-50">
+      <div className="relative w-full">
         
         <header className="relative h-screen w-full overflow-hidden">
           
@@ -46,7 +46,7 @@ const HomePage = () => {
           </video>
 
           {/* Simple Dark Overlay */}
-          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0"></div>
 
           {/* Content Container */}
           <div className="relative z-10 h-full flex items-center justify-center px-6 md:px-12">
@@ -54,20 +54,20 @@ const HomePage = () => {
               
               {/* Badge */}
               <div className="inline-block">
-                <span className="inline-flex items-center px-5 py-2 bg-white/90 rounded-full text-sm font-medium text-gray-900">
+                <span className="mt:8 inline-flex items-center px-5 py-2 bg-white/90 rounded-full text-sm font-medium text-gray-900">
                   Pioneering E-Mobility Since 2012
                 </span>
               </div>
 
               {/* Main Heading */}
-              <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+              <h1 className="text-5xl md:text-7xl font-bold text-gray-900 leading-tight">
                 Building India's Sustainable
                 <br />
                 <span className="text-emerald-400">Mobility Ecosystem</span>
               </h1>
 
               {/* Subheading */}
-              <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto leading-relaxed">
                 Premium electric vehicles and comprehensive distribution network serving customers across India
               </p>
 
@@ -94,20 +94,20 @@ const HomePage = () => {
               {/* Stats - Clean and Simple */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 max-w-4xl mx-auto">
                 <div className="space-y-1">
-                  <div className="text-3xl md:text-4xl font-bold text-white">12+</div>
-                  <div className="text-sm text-gray-300">Years of Excellence</div>
+                  <div className="text-3xl md:text-4xl font-bold text-black">12+</div>
+                  <div className="text-sm text-black">Years of Excellence</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-3xl md:text-4xl font-bold text-white">50K+</div>
-                  <div className="text-sm text-gray-300">Happy Customers</div>
+                  <div className="text-3xl md:text-4xl font-bold text-black">50K+</div>
+                  <div className="text-sm text-black">Happy Customers</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-3xl md:text-4xl font-bold text-white">Pan India</div>
-                  <div className="text-sm text-gray-300">Distribution</div>
+                  <div className="text-3xl md:text-4xl font-bold text-black">Pan India</div>
+                  <div className="text-sm text-black">Distribution</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-3xl md:text-4xl font-bold text-white">100%</div>
-                  <div className="text-sm text-gray-300">Eco-Friendly</div>
+                  <div className="text-3xl md:text-4xl font-bold text-black">100%</div>
+                  <div className="text-sm text-black">Eco-Friendly</div>
                 </div>
               </div>
             </div>

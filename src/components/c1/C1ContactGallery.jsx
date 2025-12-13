@@ -25,7 +25,7 @@ const C1ContactGallery = () => (
               </div>
               <div>
                 <p className="text-slate-400 text-sm mb-1">Brand</p>
-                <p className="text-xl font-semibold">**TORA E-SCOOTY**</p>
+                <p className="text-xl font-semibold">TORA E-SCOOTY</p>
               </div>
               <div>
                 <p className="text-slate-400 text-sm mb-1">Proprietor</p>
@@ -37,7 +37,7 @@ const C1ContactGallery = () => (
                 <MapPin className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1" />
                 <div>
                   <p className="text-slate-400 text-sm mb-1">Office Address</p>
-                  <p className='font-medium'>Gupthal Road, Chandausi<br />Sambhal, Uttar Pradesh – 244412</p>
+                  <p className='font-medium'>Gumthal Road, Chandausi<br />Sambhal, Uttar Pradesh – 244412</p>
                 </div>
               </div>
               <div className="flex gap-3 items-start">

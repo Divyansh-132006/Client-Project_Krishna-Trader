@@ -71,7 +71,7 @@ const C1AboutUs = ({ kg }) => (
           </p>
         </div>
         <div className="w-full max-w-5xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-emerald-100">
-          <img src="https://res.cloudinary.com/drgbysqgy/image/upload/v1765291911/gallery1_b9vfib.jpg" alt="TORA Vision Image" />
+          <img src="https://res.cloudinary.com/drgbysqgy/image/upload/v1765430637/Gemini_Generated_Image_ik89tpik89tpik89_nfldiz.png" alt="TORA Vision Image" />
         </div>
       </div>
     </section>

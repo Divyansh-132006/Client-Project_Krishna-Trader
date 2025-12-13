@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-
+import eduVanzLogo from '../../assets/tora/torascooty.png';
 const dealershipBenefits = [
   { icon: "💰", title: "High Profit", desc: "20-30% margins" },
   { icon: "🚀", title: "Fast Sales", desc: "Rapid market growth" },
@@ -8,9 +8,8 @@ const dealershipBenefits = [
   { icon: "⚡", title: "Fast Delivery", desc: "Timely stock" }
 ];
 
-const C1FinanceDealership = ({ eduVanzLogo, handleDealershipClick }) => (
+const C1FinanceDealership = ({handleDealershipClick }) => (
   <>
-    {/* Finance & Insurance */}
     <section className="max-w-7xl mx-auto px-4 mb-20">
       <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-purple-100">
         <div className="text-center mb-8">
@@ -38,7 +37,6 @@ const C1FinanceDealership = ({ eduVanzLogo, handleDealershipClick }) => (
 
           <div className="flex justify-center">
             <div className="bg-gradient-to-br from-purple-50 to-white rounded-3xl p-8 shadow-xl border-2 border-purple-200">
-              {/* NOTE: eduVanzLogo is imported in the main component. */}
               <img src={eduVanzLogo} alt="EduVanz Partner Logo" className="max-w-full h-auto object-contain" />
               <p className='text-center text-purple-700 font-semibold mt-4'>Proud Financing Partner</p>
             </div>
@@ -47,7 +45,6 @@ const C1FinanceDealership = ({ eduVanzLogo, handleDealershipClick }) => (
       </div>
     </section>
 
-    {/* Dealership */}
     <section className="max-w-7xl mx-auto px-4 mb-20">
       <div className="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-3xl p-8 md:p-12 text-white shadow-2xl">
         <div className="text-center mb-12">

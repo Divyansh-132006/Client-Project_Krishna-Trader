@@ -5,7 +5,7 @@ import { Image as ImageIcon } from 'lucide-react';
 // Assuming these paths are correct relative to your project root or defined in Company3
 import one from '../../assets/bgtop/rooftop.png';
 import two from '../../assets/bgtop/image.png';
-import three from '../../assets/bgtop/imagee.png';
+import three from '../../assets/bgtop/battery.png';
 import four from '../../assets/bgtop/scooty.png';
 import five from '../../assets/bgtop/lead.png';
 

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import fiverrlogo from "../assets/logo/Logooo-removebg-preview (1).png";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -25,7 +24,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <img
             loading="lazy"
-            src={fiverrlogo}
+            src='https://res.cloudinary.com/drgbysqgy/image/upload/v1765336500/WhatsApp_Image_2025-12-07_at_22.17.36_7cc7f070-removebg-preview_lzqzbx.png'
             alt="Logo"
             className="h-24 w-24 md:h-14 md:w-24 lg:h-24 lg:w-24 object-contain transition-transform duration-300 hover:scale-105"
           />

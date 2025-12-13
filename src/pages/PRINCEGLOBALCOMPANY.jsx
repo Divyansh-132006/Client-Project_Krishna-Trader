@@ -1,414 +1,134 @@
-import React from 'react';
-import { Zap, Shield, Users, Star, Package, Truck, Mail, Phone, MapPin } from 'lucide-react';
+// src/components/c6/Company2.jsx
+import React, { useState } from 'react';
+import { Zap, Shield, Package, Star, Menu, X, Sparkles } from 'lucide-react';
+import CompanyProfile from '../components/c6/CompanyProfile';
+import GYInternationalProducts from '../components/c6/GYInternationalProducts';
+import CYInternationalProduct from '../components/c6/CYInternationalProduct';
+import Bajaj from '../components/c6/Bajaj';
+import Triple9 from '../components/c6/Triple999';
 
-const electricVehiclesData = [
-  {
-    brand: 'SAI',
-    specialization: 'E-Scooty & E-Rickshaw Parts',
-    features: 'Known for long life and excellent performance.',
-  },
-  {
-    brand: 'CY GOLD',
-    specialization: 'Electric Vehicle Parts',
-    features: 'Reliability, strong fitting, and high-grade materials.',
-  },
-  {
-    brand: '999',
-    specialization: 'EV Components',
-    features: 'Premium quality at an affordable price.',
-  },
-  {
-    brand: 'GY',
-    specialization: 'Battery, Motor, Controller Parts',
-    features: 'Designed for South and all Indian road conditions.',
-  },
-  {
-    brand: 'UNAITED',
-    specialization: 'EV Spare Parts',
-    features: 'Strong, durable, and ideal for high-torque vehicles.',
-  },
-];
-
-const bikePartsData = [
-  {
-    brand: 'HERO',
-    specialization: 'Bike Spare Parts',
-    features: 'Reliable, high-demand, genuine products.',
-  },
-  {
-    brand: 'BAJAJ',
-    specialization: 'Bike Spare Parts',
-    features: 'Strong and maximum performance on Indian roads.',
-  },
-];
-
-const productRange = [
-  'Motors',
-  'Controllers',
-  'Brake Assemblies',
-  'Wiring Harnesses',
-  'Chassis Parts',
-  'Shock Absorbers',
-  'Plastic Body Parts',
-  'Chargers, BMS, Converters',
-];
-
-const supplyChain = [
-  'Large and consistent stock availability',
-  'Immediate dispatch facility',
-  'Fast and secure delivery across India',
-  'Special supply support for OEMs and Service Centers',
-];
-
-const keyMetrics = [
-  { number: '500+', label: 'Dealer Network', icon: Users },
-  { number: '50,000+', label: 'Parts Sold', icon: Package },
-  { number: '97%', label: 'Customer Satisfaction', icon: Star },
-];
-
-const TableHeader = ({ headers }) => (
-  <thead className="bg-gradient-to-r from-amber-100 to-amber-50">
-    <tr>
-      {headers.map((header) => (
-        <th
-          key={header}
-          className="px-6 py-4 text-left text-xs font-bold text-amber-900 uppercase tracking-wider border-b-2 border-amber-200"
-        >
-          {header}
-        </th>
-      ))}
-    </tr>
-  </thead>
-);
-
-const ProductTable = ({ data, title, emoji }) => (
-  <section className="mb-12">
-    <h3 className="text-2xl font-bold text-amber-700 mb-4 flex items-center gap-2">
-      <span className="text-3xl">{emoji}</span>
-      {title}
-    </h3>
-    <div className="overflow-hidden rounded-xl shadow-lg border border-amber-200">
-      <table className="min-w-full divide-y divide-amber-200">
-        <TableHeader headers={['Brand', 'Specialization', 'Key Features']} />
-        <tbody className="bg-white divide-y divide-gray-100">
-          {data.map((item, idx) => (
-            <tr key={item.brand} className="hover:bg-amber-50 transition-colors">
-              <td className="px-6 py-4 text-sm font-bold text-stone-900">
-                {item.brand}
-              </td>
-              <td className="px-6 py-4 text-sm text-stone-700">
-                {item.specialization}
-              </td>
-              <td className="px-6 py-4 text-sm text-stone-600">
-                {item.features}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  </section>
-);
-
-const MetricCard = ({ metric }) => {
-  const Icon = metric.icon;
-  return (
-    <div className="bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl p-8 text-white text-center transform hover:scale-105 hover:shadow-2xl transition-all duration-300">
-      <div className="flex justify-center mb-4">
-        <Icon className="w-10 h-10 opacity-90" />
-      </div>
-      <div className="text-4xl font-bold mb-2">{metric.number}</div>
-      <div className="text-amber-50 text-sm font-medium">{metric.label}</div>
-    </div>
-  );
-};
-
-const SectionCard = ({ title, children, className = "" }) => (
-  <section className={`max-w-6xl mx-auto px-4 mb-12 ${className}`}>
-    <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 hover:shadow-2xl transition-shadow duration-300">
-      {title && <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-6">{title}</h2>}
-      {children}
-    </div>
-  </section>
-);
+// --- Main Wrapper Component with Navigation Menu ---
 
 const Company2 = () => {
+  const [activeSection, setActiveSection] = useState('company');
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const menuItems = [
+    { id: 'company', label: 'Company Profile', icon: Shield },
+    { id: 'products', label: 'CY & GY Products', icon: Sparkles },
+    { id: 'bajaj', label: 'Bajaj', icon: Star },
+    { id: 'triple9', label: 'Triple9', icon: Package },
+  ];
+
+  const renderContent = () => {
+    switch (activeSection) {
+      case 'company':
+        return <CompanyProfile />;
+      case 'products':
+        return (
+          <div className="space-y-8">
+            <GYInternationalProducts />
+            <CYInternationalProduct />
+          </div>
+        );
+      case 'bajaj':
+        return <Bajaj />;
+      case 'triple9':
+        return <Triple9 />;
+      default:
+        return <CompanyProfile />;
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-amber-50 to-orange-50">
-      
-      {/* Header */}
-      <header className="relative bg-gradient-to-r from-stone-900 via-stone-800 to-amber-900 text-white py-24 px-4 shadow-2xl overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-transparent"></div>
-        </div>
-        <div className="max-w-6xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-black mb-4 tracking-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-amber-200 to-amber-400">
-              PRINCE GLOBAL COMPANY
-            </span>
-          </h1>
-          <p className="text-xl md:text-2xl text-amber-100 font-light">
-            Powering India's Electric & Bike Industry
-          </p>
-        </div>
-      </header>
-
-      {/* About Section */}
-      <SectionCard className="mt-12">
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          <div className="flex-shrink-0 group">
-            <div className="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-2xl flex items-center justify-center overflow-hidden border-8 border-white group-hover:scale-105 transition-transform duration-300">
-              <div className="w-full h-full bg-gradient-to-br from-amber-300 to-amber-500 flex items-center justify-center">
-                <span className="text-white text-6xl font-bold">PG</span>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-amber-50/30 to-stone-50">
+      {/* Navigation Bar */}
+      <nav className="bg-gradient-to-r from-stone-900 via-stone-800 to-amber-900 text-white sticky top-0 z-50 shadow-xl backdrop-blur-sm border-b border-amber-500/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            {/* Logo */}
+            <div className="flex items-center gap-3 group cursor-pointer">
+              <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center font-bold text-xl shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                PG
+              </div>
+              <div className="hidden md:block">
+                <span className="font-bold text-xl bg-gradient-to-r from-amber-200 to-amber-400 bg-clip-text text-transparent">
+                  PRINCE GLOBAL
+                </span>
+                <p className="text-xs text-amber-200/80 font-light tracking-wide">Excellence in Trade</p>
               </div>
             </div>
-          </div>
 
-          <div className="flex-1 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">
-              Leading Wholesale Trading House
-            </h2>
-            <p className="text-stone-600 text-lg leading-relaxed mb-6">
-              A trusted supplier of spare parts for electric vehicles (e-scooties, e-rickshaws) and conventional two-wheelers in India. We strengthen the industry by delivering high-quality components that power sustainable mobility.
-            </p>
-            <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-l-4 border-amber-500 p-6 rounded-lg shadow-sm">
-              <p className="text-stone-700 italic text-lg font-medium">
-                "Success means creating sustainable value for people and the environment."
-              </p>
-              <p className="text-stone-500 text-sm mt-2">— Mr. Prince Kumar Sharma</p>
+            {/* Desktop Menu */}
+            <div className="hidden md:flex gap-2">
+              {menuItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => setActiveSection(item.id)}
+                    className={`flex items-center gap-2 px-5 py-2.5 rounded-xl transition-all duration-300 font-medium text-sm ${
+                      activeSection === item.id
+                        ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/50 scale-105'
+                        : 'hover:bg-stone-700/50 hover:shadow-md backdrop-blur-sm'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                    <span>{item.label}</span>
+                  </button>
+                );
+              })}
             </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden p-2 hover:bg-stone-700/50 rounded-xl transition-all duration-300 hover:scale-110"
+            >
+              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
+
+          {/* Mobile Menu Dropdown */}
+          {menuOpen && (
+            <div className="md:hidden pb-4 space-y-2 animate-fadeIn">
+              {menuItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      setActiveSection(item.id);
+                      setMenuOpen(false);
+                    }}
+                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 ${
+                      activeSection === item.id
+                        ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/50'
+                        : 'hover:bg-stone-700/50 backdrop-blur-sm'
+                    }`}
+                  >
+                    <Icon className="w-5 h-5" />
+                    <span className="font-medium">{item.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
         </div>
-      </SectionCard>
+      </nav>
 
-      {/* Metrics */}
-      <section className="max-w-6xl mx-auto px-4 mb-12">
-        <div className="grid md:grid-cols-3 gap-6">
-          {keyMetrics.map((stat, idx) => (
-            <MetricCard key={idx} metric={stat} />
-          ))}
-        </div>
-      </section>
-
-      {/* Leadership */}
-      <SectionCard>
-        <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">
-            Leadership – Mr. Prince Kumar Sharma
-          </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-amber-500 to-amber-600 mx-auto mb-6 rounded-full"></div>
-          <p className="text-lg text-stone-600 leading-relaxed max-w-3xl mx-auto">
-            At PRINCE GLOBAL COMPANY, we're more than a supplier—we're your business partner. 
-            Our commitment is to deliver exceptional quality, timely service, and reliable partnerships 
-            that drive your success forward.
-          </p>
-        </div>
-      </SectionCard>
-
-      {/* Vision */}
-      <SectionCard>
-        <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-6 text-center">
-          Our Vision
-        </h2>
-        <div className="grid md:grid-cols-2 gap-6 text-center md:text-left">
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl border-2 border-amber-200">
-            <div className="text-4xl mb-3">🎯</div>
-            <p className="text-stone-700 text-lg">
-              Providing spare parts from the most reliable and high-quality brands in the industry
-            </p>
-          </div>
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl border-2 border-amber-200">
-            <div className="text-4xl mb-3">🔗</div>
-            <p className="text-stone-700 text-lg">
-              Strengthening supply chains for service centres, dealers and manufacturing units
-            </p>
-          </div>
-        </div>
-      </SectionCard>
-
-      {/* Products Section */}
-      <div className="bg-gradient-to-br from-white to-amber-50 py-12">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
-            <h2 className="text-4xl font-bold text-stone-800 mb-6 text-center">
-              Our Product Range & Trusted Brands
-            </h2>
-            <p className="text-stone-600 mb-12 text-center text-lg max-w-3xl mx-auto">
-              We provide premium spare parts for both electric and petrol segments, 
-              supplying only certified and durable components that meet industry standards.
-            </p>
-
-            <ProductTable 
-              data={electricVehiclesData} 
-              title="Electric Vehicle Parts (E-Scooty & E-Rickshaw)"
-              emoji="⚡"
-            />
-
-            <ProductTable 
-              data={bikePartsData} 
-              title="Bike (Two-Wheeler) Spare Parts"
-              emoji="🏍️"
-            />
-          </div>
-        </div>
+      {/* Content Area */}
+      <div className="transition-all duration-500 ease-in-out">
+        {renderContent()}
       </div>
 
-      {/* Trading Expertise */}
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
-          <h2 className="text-4xl font-bold text-stone-800 mb-6 text-center">
-            Our Trading Expertise
-          </h2>
-          <p className="text-stone-600 mb-12 text-center text-lg max-w-2xl mx-auto">
-            Beyond selling parts, we provide comprehensive supply chain support to the industry.
-          </p>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-8 border-2 border-amber-200">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-amber-500 p-3 rounded-lg">
-                  <Package className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-stone-800">
-                  Wide Product Range
-                </h3>
-              </div>
-              <p className="text-stone-600 mb-4">
-                Thousands of spare parts across multiple categories:
-              </p>
-              <ul className="space-y-2">
-                {productRange.map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-2 text-stone-700">
-                    <span className="w-2 h-2 bg-amber-500 rounded-full"></span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-8 border-2 border-amber-200">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="bg-amber-500 p-3 rounded-lg">
-                  <Truck className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-stone-800">
-                  Fast & Reliable Supply Chain
-                </h3>
-              </div>
-              <ul className="space-y-4">
-                {supplyChain.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-stone-700">
-                    <span className="w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
+      {/* Footer Badge */}
+      <div className="fixed bottom-6 right-6 bg-gradient-to-r from-stone-800 to-amber-900 text-white px-4 py-2 rounded-full shadow-xl text-xs font-medium hidden lg:block">
+        <span className="flex items-center gap-2">
+          <Zap className="w-3 h-3 text-amber-400" />
+          Premium Quality Products
+        </span>
       </div>
-
-      {/* Contact Section */}
-      <section className="max-w-6xl mx-auto px-4 mb-12">
-        <div className="bg-gradient-to-r from-stone-900 via-stone-800 to-amber-900 text-white rounded-2xl shadow-2xl overflow-hidden">
-          <div className="p-8 md:p-12">
-            <h2 className="text-4xl font-bold mb-8 text-center">Get In Touch</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-bold text-amber-300 mb-2 text-lg">Company</h3>
-                  <p className="text-lg">PRINCE GLOBAL COMPANY</p>
-                </div>
-                <div>
-                  <h3 className="font-bold text-amber-300 mb-2 text-lg">Proprietor</h3>
-                  <p className="text-lg">Mr. Prince Kumar Sharma</p>
-                </div>
-              </div>
-              <div className="space-y-6">
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-amber-400 mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-bold text-amber-300 mb-1">Office Address</h3>
-                    <p>Gumthal Road, Near Police Fire Station, Chandausi<br />Sambhal, Uttar Pradesh – 244412</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-amber-400 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-bold text-amber-300 mb-1">Contact</h3>
-                    <a href="tel:+918956464977" className="hover:text-amber-300 transition-colors text-lg">
-                      +91 89564 64977
-                    </a>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-amber-400 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-bold text-amber-300 mb-1">Email</h3>
-                    <a href="mailto:princeglobal@example.com" className="hover:text-amber-300 transition-colors">
-                      princeglobal@example.com
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery */}
-      <section className="max-w-6xl mx-auto px-4 mb-12">
-        <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl shadow-xl p-8 md:p-12">
-          <h2 className="text-4xl font-bold text-stone-800 mb-8 text-center">
-            📸 Photo Gallery
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
-            {[1, 2, 3].map((item) => (
-              <div
-                key={item}
-                className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
-              >
-                <div className="aspect-square bg-gradient-to-br from-amber-300 to-amber-500 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <Zap className="w-16 h-16 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-                    <p className="font-bold text-lg">TORA Model {item}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow">
-              <h3 className="text-xl font-bold text-stone-800 mb-4 flex items-center gap-2">
-                <span className="text-2xl">🏭</span>
-                Our Manufacturing Unit
-              </h3>
-              <div className="aspect-video bg-gradient-to-br from-stone-300 to-stone-500 rounded-lg flex items-center justify-center">
-                <Shield className="w-20 h-20 text-white" />
-              </div>
-              <p className="text-stone-600 mt-4">Modern facility in Uttar Pradesh</p>
-            </div>
-            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow">
-              <h3 className="text-xl font-bold text-stone-800 mb-4 flex items-center gap-2">
-                <span className="text-2xl">📦</span>
-                Our Warehouse
-              </h3>
-              <div className="aspect-video bg-gradient-to-br from-stone-300 to-stone-500 rounded-lg flex items-center justify-center">
-                <Package className="w-20 h-20 text-white" />
-              </div>
-              <p className="text-stone-600 mt-4">Large inventory ready for dispatch</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-stone-900 text-white py-8 text-center">
-        <p className="text-gray-400">© 2025 PRINCE GLOBAL COMPANY</p>
-        <p className="text-amber-400 mt-2 font-medium">Powering the Future of Mobility</p>
-      </footer>
     </div>
   );
 };

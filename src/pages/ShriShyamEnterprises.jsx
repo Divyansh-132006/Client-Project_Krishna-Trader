@@ -9,7 +9,7 @@ import C1WhyChoose from '../components/c1/C1WhyChoose';
 import C1FinanceDealership from '../components/c1/C1FinanceDealership';
 import C1ContactGallery from '../components/c1/C1ContactGallery';
 import C1TechnologySection from '../components/c1/TechnologySection';
-import eduVanzLogo from '../assets/tora/image.png';
+import eduVanzLogo from '../assets/tora/finance.png';
 
 const Company1 = () => {
   
@@ -28,7 +28,9 @@ const Company1 = () => {
       <C1FeaturesGrid />
       <C1TechnologySection />
       <C1WhyChoose />
-      <C1FinanceDealership handleDealershipClick={handleDealershipClick} />
+      <C1FinanceDealership 
+        handleDealershipClick={handleDealershipClick} 
+      />
       <C1ContactGallery />
     </div>
   );
