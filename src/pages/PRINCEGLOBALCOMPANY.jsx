@@ -1,133 +1,136 @@
-// src/components/c6/Company2.jsx
-import React, { useState } from 'react';
-import { Zap, Shield, Package, Star, Menu, X, Sparkles } from 'lucide-react';
+import React, { useState, useMemo } from 'react';
+import { Zap, Shield, Package, Star, Menu, X, Sparkles, ChevronRight } from 'lucide-react';
+
+// Components
 import CompanyProfile from '../components/c6/CompanyProfile';
 import GYInternationalProducts from '../components/c6/GYInternationalProducts';
-import CYInternationalProduct from '../components/c6/CYInternationalProduct';
 import Bajaj from '../components/c6/Bajaj';
 import Triple9 from '../components/c6/Triple999';
 
-// --- Main Wrapper Component with Navigation Menu ---
-
 const Company2 = () => {
   const [activeSection, setActiveSection] = useState('company');
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menuItems = [
+  // Memoized menu items to prevent unnecessary re-renders
+  const menuItems = useMemo(() => [
     { id: 'company', label: 'Company Profile', icon: Shield },
     { id: 'products', label: 'CY & GY Products', icon: Sparkles },
     { id: 'bajaj', label: 'Bajaj', icon: Star },
     { id: 'triple9', label: 'Triple9', icon: Package },
-  ];
+  ], []);
 
-  const renderContent = () => {
+  const ActiveComponent = () => {
     switch (activeSection) {
-      case 'company':
-        return <CompanyProfile />;
-      case 'products':
-        return (
-          <div className="space-y-8">
-            <GYInternationalProducts />
-            <CYInternationalProduct />
-          </div>
-        );
-      case 'bajaj':
-        return <Bajaj />;
-      case 'triple9':
-        return <Triple9 />;
-      default:
-        return <CompanyProfile />;
+      case 'company': return <CompanyProfile />;
+      case 'products': return (
+        <div className="space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <GYInternationalProducts />
+        </div>
+      );
+      case 'bajaj': return <Bajaj />;
+      case 'triple9': return <Triple9 />;
+      default: return <CompanyProfile />;
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-amber-50/30 to-stone-50">
-      {/* Navigation Bar */}
-      <nav className="bg-gradient-to-r from-stone-900 via-stone-800 to-amber-900 text-white sticky top-0 z-50 shadow-xl backdrop-blur-sm border-b border-amber-500/20">
+    <div className="min-h-screen bg-[#0f0f0e] text-stone-100 selection:bg-amber-500/30">
+      {/* --- Modern Navigation --- */}
+      <nav className="sticky top-0 z-50 bg-stone-900/80 backdrop-blur-md border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            {/* Logo */}
-            <div className="flex items-center gap-3 group cursor-pointer">
-              <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center font-bold text-xl shadow-lg transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                PG
+          <div className="flex justify-between items-center h-20">
+            
+            {/* Brand Logo */}
+            <div 
+              className="flex items-center gap-4 cursor-pointer group"
+              onClick={() => setActiveSection('company')}
+            >
+              <div className="relative">
+                <div className="absolute -inset-1 bg-amber-500 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                <div className="relative w-11 h-11 bg-gradient-to-br from-amber-400 to-amber-600 rounded-xl flex items-center justify-center font-bold text-black shadow-2xl">
+                  PG
+                </div>
               </div>
-              <div className="hidden md:block">
-                <span className="font-bold text-xl bg-gradient-to-r from-amber-200 to-amber-400 bg-clip-text text-transparent">
-                  PRINCE GLOBAL
+              <div className="hidden sm:block">
+                <span className="block font-black text-lg tracking-tighter leading-none text-white uppercase">
+                  Prince Global
                 </span>
-                <p className="text-xs text-amber-200/80 font-light tracking-wide">Excellence in Trade</p>
+                <span className="text-[10px] text-amber-500 font-bold tracking-[0.2em] uppercase opacity-80">
+                  Excellence in Trade
+                </span>
               </div>
             </div>
 
-            {/* Desktop Menu */}
-            <div className="hidden md:flex gap-2">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center bg-stone-800/50 p-1.5 rounded-2xl border border-white/5">
               {menuItems.map((item) => {
                 const Icon = item.icon;
+                const isActive = activeSection === item.id;
                 return (
                   <button
                     key={item.id}
                     onClick={() => setActiveSection(item.id)}
-                    className={`flex items-center gap-2 px-5 py-2.5 rounded-xl transition-all duration-300 font-medium text-sm ${
-                      activeSection === item.id
-                        ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/50 scale-105'
-                        : 'hover:bg-stone-700/50 hover:shadow-md backdrop-blur-sm'
+                    className={`flex items-center gap-2 px-6 py-2.5 rounded-xl transition-all duration-300 text-sm font-semibold ${
+                      isActive 
+                        ? 'bg-amber-500 text-black shadow-[0_0_20px_rgba(245,158,11,0.3)]' 
+                        : 'text-stone-400 hover:text-white hover:bg-white/5'
                     }`}
                   >
-                    <Icon className="w-4 h-4" />
-                    <span>{item.label}</span>
+                    <Icon className={`w-4 h-4 ${isActive ? 'animate-pulse' : ''}`} />
+                    {item.label}
                   </button>
                 );
               })}
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden p-2 hover:bg-stone-700/50 rounded-xl transition-all duration-300 hover:scale-110"
+            {/* Mobile Toggle */}
+            <button 
+              className="md:hidden p-2 text-stone-400 hover:text-amber-500 transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
+        </div>
 
-          {/* Mobile Menu Dropdown */}
-          {menuOpen && (
-            <div className="md:hidden pb-4 space-y-2 animate-fadeIn">
-              {menuItems.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <button
-                    key={item.id}
-                    onClick={() => {
-                      setActiveSection(item.id);
-                      setMenuOpen(false);
-                    }}
-                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 ${
-                      activeSection === item.id
-                        ? 'bg-gradient-to-r from-amber-500 to-amber-600 text-white shadow-lg shadow-amber-500/50'
-                        : 'hover:bg-stone-700/50 backdrop-blur-sm'
-                    }`}
-                  >
-                    <Icon className="w-5 h-5" />
-                    <span className="font-medium">{item.label}</span>
-                  </button>
-                );
-              })}
-            </div>
-          )}
+        {/* Mobile Dropdown */}
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-80 border-t border-white/5' : 'max-h-0'}`}>
+          <div className="p-4 space-y-2 bg-stone-900">
+            {menuItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => { setActiveSection(item.id); setIsMenuOpen(false); }}
+                className={`w-full flex items-center justify-between p-4 rounded-xl font-bold ${
+                  activeSection === item.id ? 'bg-amber-500 text-black' : 'bg-stone-800/50 text-stone-300'
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  <item.icon size={20} />
+                  {item.label}
+                </div>
+                <ChevronRight size={16} opacity={0.5} />
+              </button>
+            ))}
+          </div>
         </div>
       </nav>
 
-      {/* Content Area */}
-      <div className="transition-all duration-500 ease-in-out">
-        {renderContent()}
-      </div>
+      {/* --- Main Content Area --- */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="transition-opacity duration-500">
+          <ActiveComponent />
+        </div>
+      </main>
 
-      {/* Footer Badge */}
-      <div className="fixed bottom-6 right-6 bg-gradient-to-r from-stone-800 to-amber-900 text-white px-4 py-2 rounded-full shadow-xl text-xs font-medium hidden lg:block">
-        <span className="flex items-center gap-2">
-          <Zap className="w-3 h-3 text-amber-400" />
-          Premium Quality Products
-        </span>
+      {/* --- Floating Status Badge --- */}
+      <div className="fixed bottom-8 right-8 hidden xl:block pointer-events-none">
+        <div className="bg-stone-900/90 backdrop-blur-md border border-amber-500/20 px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3">
+          <div className="relative">
+             <div className="absolute inset-0 bg-amber-500 rounded-full animate-ping opacity-20"></div>
+             <Zap className="w-4 h-4 text-amber-500 relative" />
+          </div>
+          <span className="text-xs font-bold tracking-widest text-stone-300 uppercase">Premium Quality Guaranteed</span>
+        </div>
       </div>
     </div>
   );

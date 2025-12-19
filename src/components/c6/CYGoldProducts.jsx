@@ -1,4 +1,3 @@
-// src/components/c6/CYGoldProducts.jsx
 import React from 'react';
 import { Zap, Shield, Package } from 'lucide-react';
 import { 

@@ -1,4 +1,3 @@
-// src/components/c6/common/ProductTable.jsx
 import React from 'react';
 import TableHeader from './TableHeader';
 

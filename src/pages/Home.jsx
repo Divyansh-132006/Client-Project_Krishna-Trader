@@ -18,16 +18,14 @@ const HomePage = () => {
       </Helmet>
 
       <div className="relative w-full">
-        
+        {/* --- HERO SECTION --- */}
         <header className="relative h-screen w-full overflow-hidden">
-          
           {/* Video Background */}
           <video
             autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
             className="hidden md:block absolute inset-0 w-full h-full object-cover"
             aria-label="Krishna Group electric vehicle manufacturing showcase"
           >
@@ -45,53 +43,35 @@ const HomePage = () => {
             <source src="https://res.cloudinary.com/drgbysqgy/video/upload/v1763486864/videoplayback-online-video-cutte_hqrxal.webm" type="video/webm" />
           </video>
 
-          {/* Simple Dark Overlay */}
-          <div className="absolute inset-0"></div>
-
           {/* Content Container */}
           <div className="relative z-10 h-full flex items-center justify-center px-6 md:px-12">
             <div className="max-w-5xl text-center space-y-8">
-              
-              {/* Badge */}
               <div className="inline-block">
-                <span className="mt:8 inline-flex items-center px-5 py-2 bg-white/90 rounded-full text-sm font-medium text-gray-900">
+                <span className="inline-flex items-center px-5 py-2 bg-white/90 rounded-full text-sm font-medium text-gray-900">
                   Pioneering E-Mobility Since 2012
                 </span>
               </div>
 
-              {/* Main Heading */}
               <h1 className="text-5xl md:text-7xl font-bold text-gray-900 leading-tight">
                 Building India's Sustainable
                 <br />
                 <span className="text-emerald-400">Mobility Ecosystem</span>
               </h1>
 
-              {/* Subheading */}
               <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto leading-relaxed">
                 Premium electric vehicles and comprehensive distribution network serving customers across India
               </p>
 
-              {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <Link
-                  to="/about"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-600 text-white text-base font-semibold rounded-lg hover:bg-emerald-700 transition-colors duration-200"
-                  aria-label="Learn more about Krishna Group"
-                >
+                <Link to="/about" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-600 text-white text-base font-semibold rounded-lg hover:bg-emerald-700 transition-colors">
                   Explore Our Vision
                   <ArrowRight className="w-5 h-5" />
                 </Link>
-                
-                <Link
-                  to="/business"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 text-base font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200"
-                  aria-label="View Krishna Group products"
-                >
+                <Link to="/business" className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 text-base font-semibold rounded-lg hover:bg-gray-100 transition-colors">
                   Our Products
                 </Link>
               </div>
 
-              {/* Stats - Clean and Simple */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 max-w-4xl mx-auto">
                 <div className="space-y-1">
                   <div className="text-3xl md:text-4xl font-bold text-black">12+</div>
@@ -113,6 +93,30 @@ const HomePage = () => {
             </div>
           </div>
         </header>
+
+        {/* --- MANUFACTURING ANIMATION SECTION --- */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Precision Engineering</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Take a look at our advanced assembly and manufacturing process designed for durability and performance.
+              </p>
+            </div>
+
+            {/* Cloudinary Responsive Embed */}
+            <div className="relative rounded-2xl shadow-2xl overflow-hidden bg-black aspect-video">
+              <iframe
+                title="E-Rickshaw Assembly Animation"
+                src="https://player.cloudinary.com/embed/?cloud_name=drgbysqgy&public_id=e_rickshaw_animation_Assembly_animation_design_and_manufacturing_process._1080P_rdc7s0&profile=cld-default"
+                className="absolute top-0 left-0 w-full h-full"
+                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                allowFullScreen
+                frameBorder="0"
+              />
+            </div>
+          </div>
+        </section>
 
       </div>
     </>

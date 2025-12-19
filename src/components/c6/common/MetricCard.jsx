@@ -1,4 +1,3 @@
-// src/components/c6/common/MetricCard.jsx
 import React from 'react';
 
 const MetricCard = ({ metric }) => {

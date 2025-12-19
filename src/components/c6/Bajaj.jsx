@@ -1,123 +1,128 @@
-// src/components/c6/GYInternationalProducts.jsx
+
 import { useState } from 'react';
-import { Search, X } from 'lucide-react'; 
-// Removed: Facebook, Twitter, Linkedin, Share2 imports
+import { Search, Package, Filter } from 'lucide-react';
 
-import bearing from '../../assets/triple9/bearing.png';
-import brake from '../../assets/triple9/brake.png';
-import brakeshoe from '../../assets/triple9/brakeshoe.png';
-import controller from '../../assets/triple9/controller.png';
-import motor from '../../assets/triple9/motor.png';
-import shockerplate from '../../assets/triple9/shockerplate.png';
-
+import Ballracer from '../../assets/bajaj/ballracer.png'
+import BrakeDisc from '../../assets/bajaj/brakedisx.png'
+import Brakecircle from '../../assets/bajaj/brakecircle.png'
+import Camself from '../../assets/bajaj/camself.png'
+import Curburator from '../../assets/bajaj/curburator.png'
+import Curburotrr from '../../assets/bajaj/curburotrr.png'
+import CDI from '../../assets/bajaj/CD.png'
+import Breakdrum from '../../assets/bajaj/brakedrum.png'
+import GearSwaft from '../../assets/bajaj/gearswaft.png'
+import Fuel from '../../assets/bajaj/fuel.png'
+import SelfArmature from '../../assets/bajaj/selfarmature.png'
+import Engine from '../../assets/bajaj/enginevalve.png'
 
 const products = [
   {
     id: 1,
-    name: 'BEARING',
-    category: 'Bearing',
-    modelNo: '112',
-    voltage: 'Ipsum',
-    current: 'Dolor',
-    image: bearing,
-    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptasSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptasSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas',
-    weight: '2.5 kg',
-    dimensions: '15 × 10 × 8 cm',
-    material: 'Chrome Steel Alloy',
-    warranty: '1 Year Manufacturer Warranty',
-    tags: ['Bearing', 'E-Rickshaw Parts', 'Premium Quality']
+    name: 'Ball Racer Set',
+    category: 'Ball Racer Set',
+    modelNo: 'BRS-101',
+    price: 450,
+    image: Ballracer,
   },
   {
     id: 2,
-    name: 'BRAKE DRUM',
-    category: 'Brake Drum',
-    modelNo: '113',
-    voltage: 'lpsum',
-    current: 'Dolor',
-    image: brake,
-    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptasSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptasSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas.',
-    weight: '4.2 kg',
-    dimensions: 'N/A', // Added missing field for consistency
-    material: 'Cast Iron', // Added missing field for consistency
-    warranty: '6 Months Warranty', // Added missing field for consistency
-    tags: ['Brake System', 'Safety Components', 'Commercial Grade']
+    name: 'Brake Disc Caliper',
+    category: 'Brake System',
+    modelNo: 'BDC-202',
+    price: 850,
+    image:  BrakeDisc,
   },
   {
     id: 3,
-    name: 'BRAKE SHOE',
-    category: 'Brake Shoe',
-    modelNo: '114',
-    voltage: 'lpsum',
-    current: 'Dolor',
-    image: brakeshoe,
-    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptasSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptasSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas',
-    weight: '1.8 kg', // Added missing field for consistency
-    dimensions: '20 × 8 × 6 cm', // Added missing field for consistency
-    material: 'Composite Friction Material', // Added missing field for consistency
-    warranty: '1 Year Warranty', // Added missing field for consistency
-    tags: ['Brake Components', 'Safety First', 'Eco-Friendly']
+    name: 'Brake Disc Plate',
+    category: 'Brake System',
+    modelNo: 'BDP-203',
+    price: 650,
+    image: Brakecircle,
   },
   {
     id: 4,
-    name: 'CONTROLLER 48V 20A',
-    category: 'Controller',
-    modelNo: '114',
-    voltage: 'Lpsum',
-    current: 'Dolor',
-    certification: 'CE & RoHS', // Added missing field for consistency
-    image: controller,
-    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptasSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptasSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas',
-    weight: '1.2 kg', // Added missing field for consistency
-    dimensions: '18 × 12 × 5 cm', // Added missing field for consistency
-    material: 'ABS Plastic Housing', // Added missing field for consistency
-    warranty: '2 Year Warranty', // Added missing field for consistency
-    tags: ['Electronic Controller', 'Smart Control', 'Energy Efficient'] // Added missing field for consistency
+    name: 'Cam Shaft Assembly',
+    category: 'Engine Parts',
+    modelNo: 'CSA-301',
+    price: 1200,
+    image: Camself,
   },
-
+  {
+    id: 5,
+    name: 'Carburetor',
+    category: 'Fuel System',
+    modelNo: 'CARB-401',
+    price: 950,
+    image: Curburator,
+  },
+  {
+    id: 6,
+    name: 'Carburetor Repair Kit',
+    category: 'Fuel System',
+    modelNo: 'CRK-402',
+    price: 350,
+    image: Curburotrr,
+  },
+  {
+    id: 7,
+    name: 'CDI',
+    category: 'Electrical',
+    modelNo: 'CDI-501',
+    price: 550,
+    image: CDI,
+  },
   {
     id: 8,
-    name: 'HYDRAULIC SHOCKERS',
-    category: 'Suspension', // Corrected category from 'Bearing'
-    modelNo: '114',
-    voltage: 'lpsum',
-    current: 'Dolor',
-    certification: 'CSA Approved', // Added missing field for consistency
-    image: shockerplate,
-    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptasSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptasSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas',
-    weight: '3.2 kg per pair', // Added missing field for consistency
-    dimensions: '45 × 8 × 8 cm', // Added missing field for consistency
-    material: 'Steel with Chrome Coating', // Added missing field for consistency
-    warranty: '1 Year Warranty', // Added missing field for consistency
-    tags: ['Suspension', 'Comfort', 'Hydraulic System'] // Added missing field for consistency
+    name: 'Front Brake Drum',
+    category: 'Brake System',
+    modelNo: 'CS-601',
+    price: 420,
+    image: Breakdrum,
   },
   {
     id: 9,
-    name: 'Motor',
-    category: 'Accessories', // Corrected category from 'Controller'
-    modelNo: '120',
-    voltage: 'lpsum',
-    current: 'Dolor',
-    certification: 'TUV Certified',
-    image: motor,
-    description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptasSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptasSed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas',
-    weight: '0.6 kg per set', // Added missing field for consistency
-    dimensions: '25 × 15 × 8 cm', // Added missing field for consistency
-    material: 'ABS Frame with Glass', // Added missing field for consistency
-    warranty: '6 Months Warranty', // Added missing field for consistency
-    tags: ['Safety Accessories', 'Visibility', 'Adjustable'] // Added missing field for consistency
+    name: 'Fuel Injector',
+    category: 'Engine Parts',
+    modelNo: 'CLA-602',
+    price: 1100,
+    image: Fuel
   },
+  {
+    id: 10,
+    name: 'Gear-Swaft',
+    category: 'Transmission',
+    modelNo: 'CP-603',
+    price: 380,
+    image: GearSwaft
+  },
+  {
+    id: 11,
+    name: 'Self-Armature',
+    category: 'Engine Parts',
+    modelNo: 'CRK-302',
+    price: 780,
+    image: SelfArmature
+  },
+  {
+    id: 12,
+    name: 'Engine Valve Set',
+    category: 'Engine Parts',
+    modelNo: 'CRS-303',
+    price: 1450,
+    image:Engine,
+  },
+ 
 ];
 
-// Dynamically extract unique categories from products
-const allCategories = products.map(p => p.category);
-const categories = [...new Set(allCategories)];
 
-const Bajaj= () => {
+const allCategories = [...new Set(products.map(p => p.category))];
+
+const Bajaj = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategories, setSelectedCategories] = useState(categories);
+  const [selectedCategories, setSelectedCategories] = useState(allCategories);
   const [sortBy, setSortBy] = useState('latest');
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [activeTab, setActiveTab] = useState('description');
+  const [hoveredCard, setHoveredCard] = useState(null);
 
   const toggleCategory = (category) => {
     setSelectedCategories(prev =>
@@ -131,245 +136,157 @@ const Bajaj= () => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           product.category.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategories.includes(product.category);
-
     return matchesSearch && matchesCategory;
   });
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
-    if (sortBy === 'name') {
-      return a.name.localeCompare(b.name);
-    }
+    if (sortBy === 'name') return a.name.localeCompare(b.name);
     return 0;
   });
 
-
   return (
-    <div className="bg-gray-100 min-h-screen p-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex gap-6">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+      {/* Header */}
+      <div className="bg-white shadow-sm border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 py-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Bajaj Auto Parts
+              </h1>
+              <p className="text-sm text-gray-600 mt-1">Premium Quality Spare Parts & Accessories</p>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full text-sm font-semibold shadow-lg">
+              <Package className="w-4 h-4" />
+              <span>{sortedProducts.length} Products</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className="flex gap-8">
           {/* Sidebar */}
-          <div className="w-64 flex-shrink-0">
+          <div className="w-72 flex-shrink-0 space-y-6">
             {/* Search */}
-            <div className="bg-white rounded border border-gray-300 mb-4">
-              <div className="flex items-center p-2 border-b border-gray-300">
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all hover:shadow-md">
+              <div className="flex items-center p-4 gap-3">
+                <Search className="w-5 h-5 text-gray-400" />
                 <input
                   type="text"
-                  placeholder="Search"
+                  placeholder="Search parts..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="flex-1 outline-none text-sm"
+                  className="flex-1 outline-none text-sm placeholder-gray-400"
                 />
-                <Search className="w-4 h-4 text-gray-600" />
               </div>
             </div>
 
             {/* Categories */}
-            <div className="bg-white rounded border border-gray-300 mb-4 p-4">
-              <h3 className="font-bold text-lg mb-3">Categories</h3>
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 transition-all hover:shadow-md">
+              <div className="flex items-center gap-2 mb-4">
+                <Filter className="w-5 h-5 text-blue-600" />
+                <h3 className="font-bold text-lg text-gray-800">Categories</h3>
+              </div>
               <div className="space-y-2">
-                {categories.map((category, idx) => (
-                  <label key={idx} className="flex items-center gap-2 cursor-pointer">
+                {allCategories.map((category, idx) => (
+                  <label
+                    key={idx}
+                    className="flex items-center gap-3 cursor-pointer hover:bg-blue-50 p-3 rounded-xl transition-all group"
+                  >
                     <input
                       type="checkbox"
                       checked={selectedCategories.includes(category)}
                       onChange={() => toggleCategory(category)}
-                      className="w-4 h-4 accent-red-600"
+                      className="w-4 h-4 accent-blue-600 cursor-pointer"
                     />
-                    <span className="text-sm">{category}</span>
+                    <span className="text-sm text-gray-700 group-hover:text-blue-600 transition-colors">
+                      {category}
+                    </span>
                   </label>
                 ))}
               </div>
+            </div>
+
+            {/* Info Card */}
+            <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-lg p-6 text-white">
+              <h3 className="font-bold text-lg mb-2">Need Help?</h3>
+              <p className="text-sm text-blue-100 mb-4">
+                Contact our experts for genuine Bajaj spare parts and accessories.
+              </p>
+              <button className="w-full bg-white text-blue-600 py-2 rounded-xl font-semibold hover:bg-blue-50 transition-colors">
+                <a href="/contact">Contact Us</a>
+              </button>
             </div>
           </div>
 
           {/* Main Content */}
           <div className="flex-1">
-            {/* New Header Added */}
-            <h1 className="text-3xl font-bold mb-6 text-gray-800">Triple9 Products</h1>
             {/* Sort By */}
-            <div className="flex justify-end mb-4">
+            <div className="flex justify-between items-center mb-6">
+              <div className="text-gray-600 text-sm">
+                Showing <span className="font-semibold text-blue-600">{sortedProducts.length}</span> products
+              </div>
               <select
-                className="border border-gray-300 rounded px-3 py-1 text-sm"
+                className="border border-gray-200 rounded-xl px-4 py-2 text-sm bg-white hover:border-blue-300 transition-colors outline-none cursor-pointer"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
               >
-                <option value="latest">Sort By Latest</option>
-                <option value="name">Sort By Name</option>
+                <option value="latest">Latest First</option>
+                <option value="name">Sort by Name</option>
               </select>
             </div>
 
             {/* Products Grid */}
-            <div className="grid grid-cols-3 gap-6">
-              {sortedProducts.length > 0 ? (
-                sortedProducts.map((product, idx) => (
-                  <div key={idx} className="bg-white rounded shadow">
-                    <div className="relative bg-gray-100 aspect-square flex items-center justify-center p-4">
+            {sortedProducts.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {sortedProducts.map((product) => (
+                  <div
+                    key={product.id}
+                    onMouseEnter={() => setHoveredCard(product.id)}
+                    onMouseLeave={() => setHoveredCard(null)}
+                    className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer group"
+                  >
+                    <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 aspect-square overflow-hidden">
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
+                      <div className={`absolute inset-0 bg-gradient-to-t from-black/30 to-transparent transition-opacity duration-300 ${hoveredCard === product.id ? 'opacity-100' : 'opacity-0'}`} />
                     </div>
-                    <div className="p-3 text-center">
-                      <div className="font-bold text-red-600 text-lg mb-1">TRIPLE9</div>
-                      <div className="text-xs text-gray-600 mb-2">{product.category.toUpperCase()}</div>
-                      <button
-                        onClick={() => setSelectedProduct(product)}
-                        className="w-full bg-red-600 text-white py-2 text-sm font-semibold rounded hover:bg-red-700 transition-colors"
-                      >
-                        View Details
-                      </button>
+                    <div className="p-5">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+                          {product.category}
+                        </span>
+                      </div>
+                      <h3 className="font-bold text-gray-800 text-lg mb-1 group-hover:text-blue-600 transition-colors">
+                        {product.name}
+                      </h3>
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-500 font-medium">
+                          Model: {product.modelNo}
+                        </span>
+                        <button className="text-blue-600 hover:text-blue-700 text-sm font-semibold transition-colors">
+                          View Details →
+                        </button>
+                      </div>
                     </div>
                   </div>
-                ))
-              ) : (
-                <div className="col-span-3 text-center py-12">
-                  <p className="text-gray-500 text-lg">No products found matching your criteria.</p>
+                ))}
+              </div>
+            ) : (
+              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-12 text-center">
+                <Package className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+                <p className="text-gray-500 text-lg">No products found matching your criteria.</p>
                 </div>
               )}
             </div>
           </div>
         </div>
       </div>
-
-      {/* Product Detail Modal */}
-      {selectedProduct && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 bg-white border-b border-gray-200 p-4 flex justify-between items-center">
-              <h2 className="text-2xl font-bold">{selectedProduct.name}</h2>
-              <button
-                onClick={() => setSelectedProduct(null)}
-                className="text-gray-500 hover:text-gray-700"
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-
-            <div className="p-6">
-              <div className="grid grid-cols-2 gap-8">
-                {/* Left Column - Images */}
-                <div>
-                  <div className="bg-gray-100 rounded-lg p-8 mb-4">
-                    <div className="aspect-square bg-white rounded-lg flex items-center justify-center overflow-hidden">
-                      <img
-                        src={selectedProduct.image}
-                        alt={selectedProduct.name}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Column - Details */}
-                <div>
-                  
-                  <p className="text-gray-700 mb-6">
-                    {selectedProduct.description}
-                  </p>
-
-                  <div className="border-t border-gray-200 pt-4 mb-6 space-y-2">
-                    <div className="flex">
-                      <span className="font-semibold w-40">Model No.:</span>
-                      <span>{selectedProduct.modelNo}</span>
-                    </div>
-                    <div className="flex">
-                      <span className="font-semibold w-40">Brand:</span>
-                      <span>Triple9</span>
-                    </div>
-                    <div className="flex">
-                      <span className="font-semibold w-40">Voltage:</span>
-                      <span>{selectedProduct.voltage}</span>
-                    </div>
-                    <div className="flex">
-                      <span className="font-semibold w-40">Current:</span>
-                      <span>{selectedProduct.current}</span>
-                    </div>
-                    <div className="flex">
-                      <span className="font-semibold w-40">Certification:</span>
-                      <span>{selectedProduct.certification}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-3 mb-6">
-                    <button className="bg-red-600 text-white px-6 py-2 rounded font-semibold hover:bg-red-700">
-                      Inquire Now
-                    </button>
-                    <button className="bg-red-600 text-white px-6 py-2 rounded font-semibold hover:bg-red-700">
-                      Call Now
-                    </button>
-                  </div>
-
-                  <div className="border-t border-gray-200 pt-4 mb-4">
-                    <div className="mb-2">
-                      <span className="font-semibold">Categories:</span>
-                      <span className="ml-2 text-gray-700">{selectedProduct.category}</span>
-                    </div>
-                    <div className="mb-2">
-                      <span className="font-semibold">Tags:</span>
-                      <span className="ml-2 text-gray-700">{selectedProduct.tags && selectedProduct.tags.join(', ')}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Tabs Section */}
-              <div className="mt-8 border-t border-gray-200">
-                <div className="flex gap-8 border-b border-gray-200">
-                  <button
-                    onClick={() => setActiveTab('description')}
-                    className={`py-3 px-4 font-semibold ${
-                      activeTab === 'description'
-                        ? 'text-red-600 border-b-2 border-red-600'
-                        : 'text-gray-600 hover:text-gray-800'
-                    }`}
-                  >
-                    Description
-                  </button>
-                  <button
-                    onClick={() => setActiveTab('additional')}
-                    className={`py-3 px-4 font-semibold ${
-                      activeTab === 'additional'
-                        ? 'text-red-600 border-b-2 border-red-600'
-                        : 'text-gray-600 hover:text-gray-800'
-                    }`}
-                  >
-                    Additional Information
-                  </button>
-                </div>
-
-                <div className="py-6">
-                  {activeTab === 'description' ? (
-                    <p className="text-gray-700 leading-relaxed">
-                      {selectedProduct.description}
-                    </p>
-                  ) : (
-                    <div className="space-y-2">
-                      <div className="flex">
-                        <span className="font-semibold w-48">Weight:</span>
-                        <span>{selectedProduct.weight}</span>
-                      </div>
-                      <div className="flex">
-                        <span className="font-semibold w-48">Dimensions:</span>
-                        <span>{selectedProduct.dimensions}</span>
-                      </div>
-                      <div className="flex">
-                        <span className="font-semibold w-48">Material:</span>
-                        <span>{selectedProduct.material}</span>
-                      </div>
-                      <div className="flex">
-                        <span className="font-semibold w-48">Warranty:</span>
-                        <span>{selectedProduct.warranty}</span>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+    
   );
 };
 

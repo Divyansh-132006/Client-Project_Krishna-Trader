@@ -1,4 +1,3 @@
-// src/components/c6/common/SectionCard.jsx
 import React from 'react';
 
 const SectionCard = ({ title, children, className = "" }) => (

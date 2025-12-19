@@ -1,4 +1,3 @@
-// src/components/c6/CompanyProfile.jsx
 import React from 'react';
 import { Truck, Mail, Phone, MapPin, Zap, Package, Shield } from 'lucide-react';
 import { 
@@ -16,7 +15,6 @@ const CompanyProfile = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-amber-50 to-orange-50 pt-8">
       
-      {/* Header */}
       <header className="relative bg-gradient-to-r from-stone-900 via-stone-800 to-amber-900 text-white py-24 px-4 shadow-2xl overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-transparent"></div>
@@ -33,7 +31,6 @@ const CompanyProfile = () => {
         </div>
       </header>
 
-      {/* About Section */}
       <SectionCard className="mt-12">
         <div className="flex flex-col md:flex-row items-center gap-8">
           <div className="flex-shrink-0 group">
@@ -61,7 +58,6 @@ const CompanyProfile = () => {
         </div>
       </SectionCard>
 
-      {/* Metrics */}
       <section className="max-w-6xl mx-auto px-4 mb-12">
         <div className="grid md:grid-cols-3 gap-6">
           {keyMetrics.map((stat, idx) => (
@@ -70,7 +66,6 @@ const CompanyProfile = () => {
         </div>
       </section>
 
-      {/* Leadership & Vision */}
       <SectionCard>
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">
@@ -85,7 +80,6 @@ const CompanyProfile = () => {
         </div>
       </SectionCard>
 
-      {/* Vision */}
       <SectionCard>
         <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-6 text-center">
           Our Vision
@@ -106,7 +100,6 @@ const CompanyProfile = () => {
         </div>
       </SectionCard>
 
-      {/* Products Section (Table) */}
       <div className="bg-gradient-to-br from-white to-amber-50 py-12">
         <div className="max-w-6xl mx-auto px-4">
           <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
@@ -133,7 +126,6 @@ const CompanyProfile = () => {
         </div>
       </div>
 
-      {/* Trading Expertise */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
           <h2 className="text-4xl font-bold text-stone-800 mb-6 text-center">
@@ -188,7 +180,6 @@ const CompanyProfile = () => {
         </div>
       </div>
 
-      {/* Contact Section */}
       <section className="max-w-6xl mx-auto px-4 mb-12">
         <div className="bg-gradient-to-r from-stone-900 via-stone-800 to-amber-900 text-white rounded-2xl shadow-2xl overflow-hidden">
           <div className="p-8 md:p-12">
@@ -236,7 +227,6 @@ const CompanyProfile = () => {
         </div>
       </section>
 
-      {/* Gallery */}
       <section className="max-w-6xl mx-auto px-4 mb-12">
         <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl shadow-xl p-8 md:p-12">
           <h2 className="text-4xl font-bold text-stone-800 mb-8 text-center">
@@ -284,7 +274,6 @@ const CompanyProfile = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-stone-900 text-white py-8 text-center">
         <p className="text-gray-400">© 2025 PRINCE GLOBAL COMPANY</p>
         <p className="text-amber-400 mt-2 font-medium">Powering the Future of Mobility</p>
