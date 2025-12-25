@@ -44,3 +44,51 @@ const App = () => {
 };
 
 export default App;
+
+
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import Navbar from './Navbar/Navbar.jsx';
+// import './App.css';
+// import { Suspense, lazy } from 'react';
+// import Loading from './pages/Loading.jsx';
+// import ScrollBar from './pages/ScrollBar.jsx';
+
+// // Lazy loaded pages
+// const HomePage = lazy(() => import('./pages/Home.jsx'));
+// const ContactPage = lazy(() => import('./pages/ContactPage.jsx'));
+// const AboutPage = lazy(() => import('./pages/AboutPage.jsx'));
+// const BusinessLanding = lazy(() => import('./pages/BusinessLanding.jsx'));
+// const ShriShyamEnterprises = lazy(() => import('./pages/ShriShyamEnterprises.jsx'));
+// const PRINCEGLOBALCOMPANY = lazy(() => import('./pages/PRINCEGLOBALCOMPANY.jsx'));
+// const KRISHNAEVEHICLETRADERS = lazy(() => import('./pages/KRISHNAEVEHICLETRADERS.jsx'));
+// const KRISHNAPOWERSOLUTIONPRIVATELIMITED = lazy(() => import('./pages/KRISHNAPOWERSOLUTIONPRIVATELIMITED.jsx'));
+// const KRISHNAERICHSAWENTER = lazy(() => import('./pages/KRISHNAERICHSAWENTER.jsx'));
+// const MediaPage = lazy(() => import('./pages/MediaPage.jsx'));
+// const Dealership = lazy(() => import('./components/c1/Dealership'));
+
+// const App = () => {
+//   return (
+//     <Router>
+//       <Navbar />
+//       <ScrollBar>
+//         <Suspense fallback={<Loading />}>
+//           <Routes>
+//             <Route path="/" element={<HomePage />} />
+//             <Route path="/about" element={<AboutPage />} />
+//             <Route path="/business" element={<BusinessLanding />} />
+//             <Route path="/contact" element={<ContactPage />} />
+//             <Route path="/media" element={<MediaPage />} />
+//             <Route path="/shrishyamenterprises" element={<ShriShyamEnterprises />} />
+//             <Route path="/princeglobalcompany" element={<PRINCEGLOBALCOMPANY />} />
+//             <Route path="/krishnaevehicletraders" element={<KRISHNAEVEHICLETRADERS />} />
+//             <Route path="/krishnapowersolutionprivatelimited" element={<KRISHNAPOWERSOLUTIONPRIVATELIMITED />} />
+//             <Route path="/krishnaerichsawenterprises" element={<KRISHNAERICHSAWENTER />} />
+//             <Route path="/dealership" element={<Dealership />} />
+//           </Routes>
+//         </Suspense>
+//       </ScrollBar>
+//     </Router>
+//   );
+// };
+
+// export default App;

@@ -7,7 +7,7 @@ import GYInternationalProducts from '../components/c6/GYInternationalProducts';
 import Bajaj from '../components/c6/Bajaj';
 import Triple9 from '../components/c6/Triple999';
 
-const Company2 = () => {
+const PRINCEGLOBALCOMPANY = () => {
   const [activeSection, setActiveSection] = useState('company');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -136,4 +136,4 @@ const Company2 = () => {
   );
 };
 
-export default Company2;
+export default PRINCEGLOBALCOMPANY;

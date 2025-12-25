@@ -61,7 +61,7 @@ const solarData = [
   }
 ];
 
-const Company3 = () => {
+const KRISHNAEVEHICLETRADERS = () => {
   return (
     <div className="min-h-screen bg-slate-50 font-sans">
       {/* --- HERO SECTION (VIDEO BACKGROUND) --- */}
@@ -319,4 +319,4 @@ const Company3 = () => {
   );
 };
 
-export default Company3;
+export default KRISHNAEVEHICLETRADERS;

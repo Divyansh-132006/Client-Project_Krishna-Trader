@@ -11,7 +11,7 @@ import C1ContactGallery from '../components/c1/C1ContactGallery';
 import C1TechnologySection from '../components/c1/TechnologySection';
 import eduVanzLogo from '../assets/tora/finance.png';
 
-const Company1 = () => {
+const ShriShyamEnterprises = () => {
   
   const navigate = useNavigate();
 
@@ -36,4 +36,4 @@ const Company1 = () => {
   );
 };
 
-export default Company1;
+export default ShriShyamEnterprises;

@@ -139,7 +139,7 @@ const FinancePartnersSection = ({ partnersData }) => (
   </section>
 );
 
-// --- PRODUCT LISTING COMPONENTS DATA ---
+
 
 const productData = [
   {
@@ -251,7 +251,7 @@ const ProductListingsSection = ({ products }) => (
   </section>
 );
 
-// --- CAROUSEL COMPONENTS ---
+
 
 const BusinessContent = ({ company }) => (
   <div
@@ -328,8 +328,8 @@ const BusinessCarousel = () => {
   );
 };
 
-// --- MAIN COMPANY COMPONENT ---
-export default function Company5() {
+
+export default function KRISHNAERICHSAWENTER() {
   const coreStrengths = [
     { icon: <Shield className="w-8 h-8" />, title: "Strong Chassis", desc: "High-grade iron construction that withstands up to 500kg load" },
     { icon: <Settings className="w-8 h-8" />, title: "Superior Suspension", desc: "Comfortable ride even on rough terrain" },
@@ -367,7 +367,7 @@ export default function Company5() {
   return (
     <div className="min-h-screen bg-gray-50">
 
-      {/* Enhanced Header */}
+    
       <header className="bg-gradient-to-br from-emerald-600 via-emerald-700 to-emerald-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnptMC0xOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnpNMCAwaDYwdjYwSDB6IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iLjA1Ii8+PC9nPjwvc3ZnPg==')] opacity-10"></div>
         
@@ -388,7 +388,7 @@ export default function Company5() {
           <div className="flex flex-wrap justify-center gap-4 mt-8">
            
             <a
-              href="/dealership"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeLuBFMsZX0l1fz3TccGdmyQyxyTTYryFzjPo-wAdsXLgugAQ/viewform"
               className="inline-flex items-center gap-2 bg-emerald-800 text-white px-8 py-4 rounded-xl font-bold hover:bg-emerald-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 border-2 border-white/20"
             >
               <Users className="w-5 h-5" />

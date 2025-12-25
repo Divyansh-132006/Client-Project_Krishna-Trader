@@ -61,7 +61,7 @@ const ExportRegionScroller = () => {
 };
 
 
-const Company4 = () => {
+const KRISHNAPOWERSOLUTIONPRIVATELIMITED = () => {
   const [activeTab, setActiveTab] = useState('ev');
 
 
@@ -399,4 +399,4 @@ const Company4 = () => {
   );
 };
 
-export default Company4;
+export default KRISHNAPOWERSOLUTIONPRIVATELIMITED;
