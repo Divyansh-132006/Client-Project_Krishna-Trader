@@ -13,45 +13,41 @@ const MediaPage = () => {
   const tabs = [
     { id: 'achievements', label: 'Achievements', icon: Trophy, color: 'text-amber-600', bg: 'bg-amber-50', border: 'border-amber-200' },
     { id: 'members', label: 'Our Team', icon: Users, color: 'text-blue-600', bg: 'bg-blue-50', border: 'border-blue-200' },
-    { id: 'leadership', label: 'Leadership', icon: Sparkles, color: 'text-purple-600', bg: 'bg-purple-50', border: 'border-purple-200' },
-    { id: 'videos', label: 'Media Center', icon: Video, color: 'text-emerald-600', bg: 'bg-emerald-50', border: 'border-emerald-200' }
   ];
 
-  // --- Data Arrays (Keeping your original content) ---
+
   const achievements = [
-    { id: 1, title: 'Excellence in Construction 2024', category: 'Industry Recognition', description: 'Awarded for innovative construction methods and sustainable building practices.', image: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=800&q=80', date: 'Mar 2024', icon: Trophy },
-    { id: 2, title: 'Best Infrastructure Development', category: 'Project Excellence', description: 'Recognized for outstanding urban infrastructure development and community impact.', image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80', date: 'Jan 2024', icon: Target },
-    { id: 3, title: 'Quality & Safety Standard', category: 'Certification', description: 'ISO 9001:2015 certified for maintaining highest standards in quality protocols.', image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80', date: 'Dec 2023', icon: Star },
-    { id: 4, title: 'Customer Satisfaction Award', category: 'Client Relations', description: 'Honored for exceptional customer service and project delivery excellence.', image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80', date: 'Nov 2023', icon: Award }
+    { id: 1, title: '', category: '', description: '', image: 'https://res.cloudinary.com/drgbysqgy/image/upload/v1766676883/kgmm_ejidlk.jpg', date: '',  },
+    { id: 2, title: '', category: '', description: '', image: 'https://res.cloudinary.com/drgbysqgy/image/upload/v1766676866/kgm_kyffec.jpg', date: ''},
   ];
 
   const members = [
-    { id: 1, name: 'Rajesh Kumar', position: 'Chief Architect', specialty: 'Urban Design & Planning', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80', experience: '15+ yrs', projects: '120+' },
-    { id: 2, name: 'Priya Sharma', position: 'Project Director', specialty: 'Construction Management', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80', experience: '12+ yrs', projects: '95+' },
-    { id: 3, name: 'Amit Patel', position: 'Senior Engineer', specialty: 'Structural Engineering', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80', experience: '10+ yrs', projects: '80+' },
-    { id: 4, name: 'Sneha Reddy', position: 'Design Lead', specialty: 'Interior & Landscape', image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80', experience: '8+ yrs', projects: '65+' }
+    { id: 1, name: 'Mr. Ravi Kumar', position: 'Leader', specialty: 'Shri Shyam Enterprises', image: ''},
+    { id: 2, name: 'Mr. Prince Kumar Sharma', position: 'Leader', specialty: 'PRINCE GLOBAL COMPANY', image: '',  },
+    { id: 3, name: 'Mr. Satish Chandra Sharma', position: 'Leader', specialty: 'Krishna E-Rickshaw Enterprises', image: '',  },
+    { id: 4, name: 'Mr.', position: 'Leader', specialty: 'Krishna Power Solution', image: '', },
+    { id: 5, name: 'Smt. Krishna Devi', position: 'Leader', specialty: 'Krishna E-Vechils Traders', image: '', }
   ];
 
   const leadership = [
-    { id: 1, name: 'Krishna Mohan', position: 'Founder & Chairman', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80', description: 'Visionary entrepreneur with 25+ years pioneering sustainable real estate development.', motto: 'Building Tomorrow, Today', stats: ['25+ Years', '200+ Projects'] },
-    { id: 2, name: 'Sunita Krishna', position: 'Co-Founder & MD', image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80', description: 'Strategic leader specializing in business growth and sustainability initiatives.', motto: 'Excellence Through Innovation', stats: ['20+ Years', 'Sustainability Pioneer'] }
+    // { id: 1, name: 'Krishna Mohan', position: 'Founder & Chairman', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80', description: 'Visionary entrepreneur with 25+ years pioneering sustainable real estate development.', motto: 'Building Tomorrow, Today', stats: ['25+ Years', '200+ Projects'] },
+    // { id: 2, name: 'Sunita Krishna', position: 'Co-Founder & MD', image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80', description: 'Strategic leader specializing in business growth and sustainability initiatives.', motto: 'Excellence Through Innovation', stats: ['20+ Years', 'Sustainability Pioneer'] }
   ];
 
   const videos = [
-    { id: 1, title: 'Company Overview 2024', category: 'Corporate', thumbnail: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80', duration: '3:45', views: '25K', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-    { id: 2, title: 'Construction Excellence', category: 'Projects', thumbnail: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80', duration: '5:20', views: '18K', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-    { id: 3, title: '25 Years of Journey', category: 'Story', thumbnail: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80', duration: '4:15', views: '32K', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-    { id: 4, title: 'Building Trust', category: 'Testimonials', thumbnail: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80', duration: '2:30', views: '15K', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' }
+    // { id: 1, title: 'Company Overview 2024', category: 'Corporate', thumbnail: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80', duration: '3:45', views: '25K', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+    // { id: 2, title: 'Construction Excellence', category: 'Projects', thumbnail: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80', duration: '5:20', views: '18K', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+    // { id: 3, title: '25 Years of Journey', category: 'Story', thumbnail: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80', duration: '4:15', views: '32K', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+    // { id: 4, title: 'Building Trust', category: 'Testimonials', thumbnail: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80', duration: '2:30', views: '15K', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' }
   ];
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-indigo-100">
-      {/* Subtle Header Gradient */}
+
       <div className="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-indigo-50/50 to-transparent -z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
         
-        {/* Section Header */}
         <header className={`text-center mb-16 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           <div className="inline-flex items-center gap-2 bg-white border border-slate-200 shadow-sm rounded-full px-5 py-1.5 mb-6">
             <Sparkles className="text-indigo-500" size={16} />
@@ -65,7 +61,6 @@ const MediaPage = () => {
           </p>
         </header>
 
-        {/* Professional Tab Switcher */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
           {tabs.map((tab) => {
             const Icon = tab.icon;
@@ -87,7 +82,7 @@ const MediaPage = () => {
           })}
         </div>
 
-        {/* Dynamic Content Area */}
+        
         <main className="min-h-[400px]">
           {activeTab === 'achievements' && (
             <div className="grid md:grid-cols-2 gap-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
@@ -119,7 +114,6 @@ const MediaPage = () => {
                   <p className="text-slate-500 text-xs mb-4">{person.specialty}</p>
                   <div className="flex justify-center gap-2">
                     <span className="bg-slate-100 px-3 py-1 rounded-lg text-[10px] font-bold text-slate-600 uppercase tracking-tighter">{person.experience}</span>
-                    <span className="bg-blue-50 px-3 py-1 rounded-lg text-[10px] font-bold text-blue-600 uppercase tracking-tighter">{person.projects} Projects</span>
                   </div>
                 </div>
               ))}
@@ -180,7 +174,6 @@ const MediaPage = () => {
         </main>
       </div>
 
-      {/* Modern Video Modal Overlay */}
       {selectedVideo && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-slate-900/90 backdrop-blur-sm animate-in fade-in duration-300">
           <div className="relative w-full max-w-4xl bg-white rounded-3xl overflow-hidden shadow-2xl">

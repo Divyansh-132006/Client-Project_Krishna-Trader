@@ -94,8 +94,7 @@ const HomePage = () => {
           </div>
         </header>
 
-        {/* --- MANUFACTURING ANIMATION SECTION --- */}
-        <section className="py-20 bg-gray-50">
+        {/* <section className="py-20 bg-gray-50">
           <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Precision Engineering</h2>
@@ -104,7 +103,6 @@ const HomePage = () => {
               </p>
             </div>
 
-            {/* Cloudinary Responsive Embed */}
             <div className="relative rounded-2xl shadow-2xl overflow-hidden bg-black aspect-video">
               <iframe
                 title="E-Rickshaw Assembly Animation"
@@ -116,7 +114,7 @@ const HomePage = () => {
               />
             </div>
           </div>
-        </section>
+        </section> */}
 
       </div>
     </>

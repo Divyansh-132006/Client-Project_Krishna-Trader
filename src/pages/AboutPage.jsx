@@ -178,7 +178,7 @@ const AboutPage = () => {
                                 <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-orange-500 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
                                 <img
                                     src={founderImage}
-                                    alt="Shri Satish Chandra Sharma - Founder of Krishna Group"
+                                    alt=""
                                     className="relative w-full aspect-[3/4] object-cover rounded-3xl shadow-2xl border-4 border-white"
                                     loading="lazy"
                                 />
