@@ -17,7 +17,7 @@ const AboutPage = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Founder section fade-in
+  
             gsap.fromTo(
                 founderSectionRef.current,
                 { opacity: 0, y: 100 },
@@ -118,31 +118,31 @@ const AboutPage = () => {
             name: 'Shri Shyam Enterprises', 
             desc: 'Modern electric scooter manufacturing with cutting-edge technology', 
             icon: '🛵',
-            link: '/company1'
+            link: "/shrishyamenterprises"
         },
         { 
             name: 'Krishna E-Rickshaw Enterprises', 
             desc: 'Safe & reliable e-rickshaw production for sustainable mobility', 
             icon: '🛺',
-            link: '/company5'
+            link: "/krishnaerickshawenterprises"
         },
         { 
             name: 'Prince Globale', 
             desc: 'International standard parts import and global trade solutions', 
             icon: '🌍',
-            link: '/company2'
+            link: "/princeglobalcompany"
         },
         { 
             name: 'Krishna E-Vehicle Traders', 
             desc: 'Nationwide spare parts distribution network', 
             icon: '🔋',
-            link: '/company3'
+            link: "/krishnaevehicletraders"
         },
         { 
             name: 'Krishna Power Solution', 
             desc: 'Youth employment programs & technical solutions', 
             icon: '💼',
-            link: '/company4'
+            link: "/krishnapowersolutionprivatelimited"
         }
     ];
 

@@ -1,46 +1,47 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const companies = [
-    {
-        emoji: "🛵",
-        title: "SHRI SHYAM ENTERPRISES",
-        description: "Built for Indian roads, powered by world-class technology.",
-        slogan: "Power, Style, and Dealership Trust – TORA",
-        link: "/company1",
-        label: "EV"
-    },
-    {
-        emoji: "🌍",
-        title: "PRINCE GLOBAL COMPANY",
-        description: "The largest wholesaler of high-quality spare parts for electric and conventional vehicles.",
-        slogan: "The right part for every vehicle, at the right time.",
-        link: "/company2",
-        label: "RT"
-    },
-    {
-        emoji: "🔋",
-        title: "KRISHNA E-VEHICLE TRADERS",
-        description: "Leading commercial hub for Electric Mobility (EV) and Solar Systems in Chandausi (Sambhal).",
-        slogan: "Comprehensive energy solutions for a sustainable future.",
-        link: "/company3",
-        label: "PE"
-    },
-    {
-        emoji: "⚡",
-        title: "KRISHNA POWER SOLUTION",
-        description: "India's reliable name in power, technology, and global trade.",
-        slogan: "Integrated solutions in EV manufacturing, International Trading, Industrial Services, and Government Projects.",
-        link: "/company4",
-        label: "GB"
-    },
-    {
-        emoji: "🛺",
-        title: "KRISHNA E-RICKSHAW ENTERPRISES",
-        description: "Manufacturing sustainable, safe, and high-performance electric rickshaws.",
-        slogan: "India's Roads, India's Strength — Building the Future of Transportation.",
-        link: "/company5",
-        label: "ER"
-    }
+  {
+    emoji: "🛵",
+    title: "SHRI SHYAM ENTERPRISES",
+    description: "Built for Indian roads, powered by world-class technology.",
+    slogan: "Power, Style, and Dealership Trust – TORA",
+    link: "/shrishyamenterprises",
+    label: "EV"
+  },
+  {
+    emoji: "🌍",
+    title: "PRINCE GLOBAL COMPANY",
+    description: "The largest wholesaler of high-quality spare parts for electric and conventional vehicles.",
+    slogan: "The right part for every vehicle, at the right time.",
+    link: "/princeglobalcompany",
+    label: "RT"
+  },
+  {
+    emoji: "🔋",
+    title: "KRISHNA E-VEHICLE TRADERS",
+    description: "Leading commercial hub for Electric Mobility (EV) and Solar Systems in Chandausi (Sambhal).",
+    slogan: "Comprehensive energy solutions for a sustainable future.",
+    link: "/krishnaevehicletraders",
+    label: "PE"
+  },
+  {
+    emoji: "⚡",
+    title: "KRISHNA POWER SOLUTION",
+    description: "India's reliable name in power, technology, and global trade.",
+    slogan: "Integrated solutions in EV manufacturing, International Trading, Industrial Services, and Government Projects.",
+    link: "/krishnapowersolutionprivatelimited",
+    label: "GB"
+  },
+  {
+    emoji: "🛺",
+    title: "KRISHNA E-RICKSHAW ENTERPRISES",
+    description: "Manufacturing sustainable, safe, and high-performance electric rickshaws.",
+    slogan: "India's Roads, India's Strength — Building the Future of Transportation.",
+    link: "/krishnaerickshawenterprises",
+    label: "ER"
+  }
 ];
 
 const benefits = [

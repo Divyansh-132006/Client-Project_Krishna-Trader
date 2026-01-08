@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-
+import ImageHandler from '../hooks/imagehandler.js'; 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
@@ -15,22 +15,25 @@ const Navbar = () => {
     { to: "/contact", label: "Contact Us" },
   ];
 
+    const imagekitUrl = 'https://ik.imagekit.io/h5k64whau/Cloudinary_Archive_2025-12-31_13_57_15_Originals/WhatsApp_Image_2025-12-07_at_22.17.36_7cc7f070-removebg-preview_lzqzbx.png?updatedAt=1767171026483'
+    const cloudinaryUrl  ='https://res.cloudinary.com/ddiyjetob/image/upload/v1767198882/WhatsApp_Image_2025-12-07_at_22.17.36_7cc7f070-removebg-preview_lzqzbx_qfqlnr.png'
+
+
+const imageSrc = ImageHandler({ cloudinaryUrl, imagekitUrl });
+
   return (
-    // 💡 MODIFIED: Added 'sticky top-0' for sticky position.
-    // Kept 'bg-black/20' and 'backdrop-blur-lg' for the glassy effect.
+   
     <nav className="sticky top-0 bg-black/20 backdrop-blur-lg text-white px-4 py-3 md:px-8 md:py-4 z-50 border-b border-black/30">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo */}
+        
         <div className="flex items-center">
           <img
             loading="lazy"
-            src='https://res.cloudinary.com/drgbysqgy/image/upload/v1765336500/WhatsApp_Image_2025-12-07_at_22.17.36_7cc7f070-removebg-preview_lzqzbx.png'
-            alt="Logo"
+            src={imageSrc }
             className="h-24 w-24 md:h-14 md:w-24 lg:h-24 lg:w-24 object-contain transition-transform duration-300 hover:scale-105"
           />
         </div>
 
-        {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center space-x-6 lg:space-x-10">
           {navLinks.map((link) => (
             <li key={link.to}>

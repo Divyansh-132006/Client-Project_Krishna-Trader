@@ -20,6 +20,7 @@ import ProductTable from '../components/c3/ProductTable';
 import FeatureCard from '../components/c3/FeatureCard';
 import BusinessCarousel from '../components/c3/BusinessCarousel';
 import PhotoGallery from '../components/c3/PhotoGallery';
+import VideoHandler from '../hooks/videohandler';
 
 // --- DATA DEFINITIONS FOR TABLES ---
 const electricVehiclesData = [
@@ -62,9 +63,15 @@ const solarData = [
 ];
 
 const KRISHNAEVEHICLETRADERS = () => {
+  const cloudinaryUrl1 = 'https://res.cloudinary.com/ddiyjetob/video/upload/v1767200334/krishna_zlyxib_1_fstk5w.mp4'
+  const imagekitUrl1 = 'https://ik.imagekit.io/h5k64whau/Cloudinary_Archive_2025-12-31_13_57_15_Originals/krishna_zlyxib%20(1).mp4'
+
+
+  const videoSrc1 = VideoHandler({ CloudinaryUrl: cloudinaryUrl1, imagekitUrl: imagekitUrl1 });
+
   return (
     <div className="min-h-screen bg-slate-50 font-sans">
-      {/* --- HERO SECTION (VIDEO BACKGROUND) --- */}
+     
       <section className="relative h-screen w-full overflow-hidden">
         <video
           autoPlay
@@ -73,8 +80,7 @@ const KRISHNAEVEHICLETRADERS = () => {
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
-          <source src="https://res.cloudinary.com/drgbysqgy/video/upload/f_auto,q_auto:best/krishna_zlyxib.webm" type="video/webm" />
-          <source src="https://res.cloudinary.com/drgbysqgy/video/upload/f_auto,q_auto:best/krishna_zlyxib.mp4" type="video/mp4" />
+          <source src={videoSrc1} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
 

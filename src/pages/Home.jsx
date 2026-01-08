@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import { ArrowRight } from 'lucide-react';
+import useVideoHandler from '../hooks/videohandler.js';
 
 const HomePage = () => {
   const seoConfig = {
@@ -8,6 +9,15 @@ const HomePage = () => {
     description: "Krishna Group is India's premier e-vehicle manufacturer since 2012. Specializing in electric scooters, e-rickshaws, spare parts, and solar solutions.",
     url: "https://www.krishnagroup.com"
   };
+
+  const cloudinaryUrl1 = "https://res.cloudinary.com/drgbysqgy/video/upload/v1763403757/videoplayback_online-video-cutter.com_kfden5.webm";
+  const imagekitUrl1 = "https://ik.imagekit.io/h5k64whau/Cloudinary_Archive_2025-12-31_13_57_15_Originals/videoplayback_online-video-cutter.com_kfden5.webm/ik-video.mp4?updatedAt=1767171035309";
+  const cloudinaryUrl2 = 'https://res.cloudinary.com/ddiyjetob/video/upload/v1767198881/videoplayback-online-video-cutte_hqrxal_uwgdgf.webm';
+  const imagekitUrl2 = 'https://ik.imagekit.io/h5k64whau/Cloudinary_Archive_2025-12-31_13_57_15_Originals/videoplayback-online-video-cutte_hqrxal.webm/ik-video.mp4?updatedAt=1767171033726';
+
+  // Use hooks properly inside the component
+  const videoSrc1 = useVideoHandler(cloudinaryUrl1, imagekitUrl1);
+  const videoSrc2 = useVideoHandler(cloudinaryUrl2, imagekitUrl2);
 
   return (
     <>
@@ -18,9 +28,7 @@ const HomePage = () => {
       </Helmet>
 
       <div className="relative w-full">
-        {/* --- HERO SECTION --- */}
         <header className="relative h-screen w-full overflow-hidden">
-          {/* Video Background */}
           <video
             autoPlay
             muted
@@ -29,7 +37,7 @@ const HomePage = () => {
             className="hidden md:block absolute inset-0 w-full h-full object-cover"
             aria-label="Krishna Group electric vehicle manufacturing showcase"
           >
-            <source src="https://res.cloudinary.com/drgbysqgy/video/upload/v1763403757/videoplayback_online-video-cutter.com_kfden5.webm" type="video/webm" />
+            <source src={videoSrc1} type="video/webm" />
           </video>
 
           <video
@@ -40,10 +48,9 @@ const HomePage = () => {
             className="md:hidden absolute inset-0 w-full h-full object-cover"
             aria-label="Krishna Group mobile showcase"
           >
-            <source src="https://res.cloudinary.com/drgbysqgy/video/upload/v1763486864/videoplayback-online-video-cutte_hqrxal.webm" type="video/webm" />
+            <source src={videoSrc2} type="video/webm" />
           </video>
 
-          {/* Content Container */}
           <div className="relative z-10 h-full flex items-center justify-center px-6 md:px-12">
             <div className="max-w-5xl text-center space-y-8">
               <div className="inline-block">
@@ -93,29 +100,6 @@ const HomePage = () => {
             </div>
           </div>
         </header>
-
-        {/* <section className="py-20 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Precision Engineering</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Take a look at our advanced assembly and manufacturing process designed for durability and performance.
-              </p>
-            </div>
-
-            <div className="relative rounded-2xl shadow-2xl overflow-hidden bg-black aspect-video">
-              <iframe
-                title="E-Rickshaw Assembly Animation"
-                src="https://player.cloudinary.com/embed/?cloud_name=drgbysqgy&public_id=e_rickshaw_animation_Assembly_animation_design_and_manufacturing_process._1080P_rdc7s0&profile=cld-default"
-                className="absolute top-0 left-0 w-full h-full"
-                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                allowFullScreen
-                frameBorder="0"
-              />
-            </div>
-          </div>
-        </section> */}
-
       </div>
     </>
   );

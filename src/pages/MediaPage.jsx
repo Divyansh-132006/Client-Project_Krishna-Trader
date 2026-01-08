@@ -17,8 +17,8 @@ const MediaPage = () => {
 
 
   const achievements = [
-    { id: 1, title: '', category: '', description: '', image: 'https://res.cloudinary.com/drgbysqgy/image/upload/v1766676883/kgmm_ejidlk.jpg', date: '',  },
-    { id: 2, title: '', category: '', description: '', image: 'https://res.cloudinary.com/drgbysqgy/image/upload/v1766676866/kgm_kyffec.jpg', date: ''},
+    { id: 1, title: '', category: '', description: '', image: 'https://res.cloudinary.com/ddiyjetob/image/upload/v1767200139/kgmm_ejidlk_evmoav.jpg', date: '',  },
+    { id: 2, title: '', category: '', description: '', image: 'https://res.cloudinary.com/ddiyjetob/image/upload/v1767200139/kgm_kyffec_moze9j.jpg', date: ''},
   ];
 
   const members = [
@@ -89,16 +89,16 @@ const MediaPage = () => {
               {achievements.map((item) => (
                 <div key={item.id} className="group bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all">
                   <div className="aspect-video overflow-hidden">
-                    <img src={item.image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={item.image} alt="" className="w-full h-full  group-hover:scale-105 transition-transform duration-500" />
                   </div>
-                  <div className="p-8">
+                  {/* <div className="p-8">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="px-3 py-1 bg-amber-50 text-amber-600 text-xs font-bold rounded-full border border-amber-100">{item.category}</span>
                       <span className="text-sm text-slate-400 font-medium">{item.date}</span>
                     </div>
                     <h3 className="text-2xl font-bold mb-3 text-slate-800">{item.title}</h3>
                     <p className="text-slate-600 leading-relaxed">{item.description}</p>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>

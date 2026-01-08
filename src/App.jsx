@@ -1,41 +1,98 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Suspense, lazy } from 'react';
+
 import Navbar from './Navbar/Navbar.jsx';
 import './App.css';
-import { Suspense, lazy } from 'react';
-import Loading from './pages/Loading.jsx';
-import ScrollBar from './pages/ScrollBar.jsx';
 
-// Lazy loaded pages
+import Loading from './hooks/Loading.jsx';
+import ScrollBar from './hooks/ScrollBar.jsx';
+
+/* =======================
+   LAZY LOADED PAGES
+   ======================= */
+
+// Core Pages
 const HomePage = lazy(() => import('./pages/Home.jsx'));
-const ContactPage = lazy(() => import('./pages/ContactPage.jsx'));
 const AboutPage = lazy(() => import('./pages/AboutPage.jsx'));
+const ContactPage = lazy(() => import('./pages/ContactPage.jsx'));
 const BusinessLanding = lazy(() => import('./pages/BusinessLanding.jsx'));
-const Company1 = lazy(() => import('./pages/ShriShyamEnterprises.jsx'));
-const Company2 = lazy(() => import('./pages/PRINCEGLOBALCOMPANY.jsx'));
-const Company3 = lazy(() => import('./pages/KRISHNAEVEHICLETRADERS.jsx'));
-const Company4 = lazy(() => import('./pages/KRISHNAPOWERSOLUTIONPRIVATELIMITED.jsx'));
-const Company5 = lazy(() => import('./pages/KRISHNAERICHSAWENTER.jsx'));
 const MediaPage = lazy(() => import('./pages/MediaPage.jsx'));
-const Dealership = lazy(() => import('./components/c1/Dealership'));
+
+// Company Pages (ONE FILE = ONE COMPANY)
+const ShriShyamEnterprises = lazy(() =>
+  import('./pages/ShriShyamEnterprises.jsx')
+);
+
+const PrinceGlobalCompany = lazy(() =>
+  import('./pages/PRINCEGLOBALCOMPANY.jsx')
+);
+
+const KrishnaEVehicleTraders = lazy(() =>
+  import('./pages/KRISHNAEVEHICLETRADERS.jsx')
+);
+
+const KrishnaPowerSolutionPrivateLimited = lazy(() =>
+  import('./pages/KRISHNAPOWERSOLUTIONPRIVATELIMITED.jsx')
+);
+
+const KrishnaERickshawEnterprises = lazy(() =>
+  import('./pages/KRISHNAERICHSAWENTER.jsx')
+);
+
+// Other
+const Dealership = lazy(() =>
+  import('./components/c1/Dealership.jsx')
+);
+
+/* =======================
+   APP ROOT
+   ======================= */
 
 const App = () => {
   return (
     <Router>
       <Navbar />
+
       <ScrollBar>
         <Suspense fallback={<Loading />}>
           <Routes>
+
+            {/* Core Routes */}
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/business" element={<BusinessLanding />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/business" element={<BusinessLanding />} />
             <Route path="/media" element={<MediaPage />} />
-            <Route path="/company1" element={<Company1 />} />
-            <Route path="/company2" element={<Company2 />} />
-            <Route path="/company3" element={<Company3 />} />
-            <Route path="/company4" element={<Company4 />} />
-            <Route path="/company5" element={<Company5 />} />
+
+            {/* Company Routes */}
+            <Route
+              path="/shrishyamenterprises"
+              element={<ShriShyamEnterprises />}
+            />
+
+            <Route
+              path="/princeglobalcompany"
+              element={<PrinceGlobalCompany />}
+            />
+
+            <Route
+              path="/krishnaevehicletraders"
+              element={<KrishnaEVehicleTraders />}
+            />
+
+            <Route
+              path="/krishnapowersolutionprivatelimited"
+              element={<KrishnaPowerSolutionPrivateLimited />}
+            />
+
+            <Route
+              path="/krishnaerickshawenterprises"
+              element={<KrishnaERickshawEnterprises />}
+            />
+
+            {/* Other */}
             <Route path="/dealership" element={<Dealership />} />
+
           </Routes>
         </Suspense>
       </ScrollBar>
@@ -44,51 +101,3 @@ const App = () => {
 };
 
 export default App;
-
-
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import Navbar from './Navbar/Navbar.jsx';
-// import './App.css';
-// import { Suspense, lazy } from 'react';
-// import Loading from './pages/Loading.jsx';
-// import ScrollBar from './pages/ScrollBar.jsx';
-
-// // Lazy loaded pages
-// const HomePage = lazy(() => import('./pages/Home.jsx'));
-// const ContactPage = lazy(() => import('./pages/ContactPage.jsx'));
-// const AboutPage = lazy(() => import('./pages/AboutPage.jsx'));
-// const BusinessLanding = lazy(() => import('./pages/BusinessLanding.jsx'));
-// const ShriShyamEnterprises = lazy(() => import('./pages/ShriShyamEnterprises.jsx'));
-// const PRINCEGLOBALCOMPANY = lazy(() => import('./pages/PRINCEGLOBALCOMPANY.jsx'));
-// const KRISHNAEVEHICLETRADERS = lazy(() => import('./pages/KRISHNAEVEHICLETRADERS.jsx'));
-// const KRISHNAPOWERSOLUTIONPRIVATELIMITED = lazy(() => import('./pages/KRISHNAPOWERSOLUTIONPRIVATELIMITED.jsx'));
-// const KRISHNAERICHSAWENTER = lazy(() => import('./pages/KRISHNAERICHSAWENTER.jsx'));
-// const MediaPage = lazy(() => import('./pages/MediaPage.jsx'));
-// const Dealership = lazy(() => import('./components/c1/Dealership'));
-
-// const App = () => {
-//   return (
-//     <Router>
-//       <Navbar />
-//       <ScrollBar>
-//         <Suspense fallback={<Loading />}>
-//           <Routes>
-//             <Route path="/" element={<HomePage />} />
-//             <Route path="/about" element={<AboutPage />} />
-//             <Route path="/business" element={<BusinessLanding />} />
-//             <Route path="/contact" element={<ContactPage />} />
-//             <Route path="/media" element={<MediaPage />} />
-//             <Route path="/shrishyamenterprises" element={<ShriShyamEnterprises />} />
-//             <Route path="/princeglobalcompany" element={<PRINCEGLOBALCOMPANY />} />
-//             <Route path="/krishnaevehicletraders" element={<KRISHNAEVEHICLETRADERS />} />
-//             <Route path="/krishnapowersolutionprivatelimited" element={<KRISHNAPOWERSOLUTIONPRIVATELIMITED />} />
-//             <Route path="/krishnaerichsawenterprises" element={<KRISHNAERICHSAWENTER />} />
-//             <Route path="/dealership" element={<Dealership />} />
-//           </Routes>
-//         </Suspense>
-//       </ScrollBar>
-//     </Router>
-//   );
-// };
-
-// export default App;
