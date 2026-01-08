@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function useImageHandler(cloudinaryUrl, imagekitUrl) {
+function useImageHandler({ cloudinaryUrl, imagekitUrl }) {
   const [imageSrc, setImageSrc] = useState(cloudinaryUrl);  
   const [error, setError] = useState(false); 
 

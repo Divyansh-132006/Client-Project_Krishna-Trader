@@ -1,6 +1,5 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import useImageHandler from '../../hooks/imagehandler';
 
 const imagekitimage1 = 'https://ik.imagekit.io/h5k64whau/Cloudinary_Archive_2025-12-31_13_57_15_Originals/1_q8jq1p.jpg?updatedAt=1767171024356';
 const cloudinaryimage1 = 'https://res.cloudinary.com/ddiyjetob/image/upload/v1767198874/1_q8jq1p_otegkh.jpg';
@@ -29,16 +28,42 @@ const galleryImages = [
   { cloudinary: cloudinaryimage6, imagekit: imagekitimage6 }
 ];
 
-// Create a separate component for each gallery image
+// Image component that handles fallback
 const GalleryImage = ({ cloudinaryUrl, imagekitUrl, index }) => {
-  const imageSrc = useImageHandler(cloudinaryUrl, imagekitUrl);
-  
+  const [imageSrc, setImageSrc] = React.useState(cloudinaryUrl);
+  const [error, setError] = React.useState(false);
+
+  React.useEffect(() => {
+    const img = new Image();
+    img.src = cloudinaryUrl;
+
+    img.onload = () => {
+      setImageSrc(cloudinaryUrl);
+      setError(false);
+    };
+
+    img.onerror = () => {
+      setError(true);
+    };
+  }, [cloudinaryUrl]);
+
+  React.useEffect(() => {
+    if (error && imagekitUrl) {
+      setImageSrc(imagekitUrl);
+    }
+  }, [error, imagekitUrl]);
+
   return (
     <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white border border-emerald-100 aspect-square">
       <img
         src={imageSrc}
         alt={`Gallery Image ${index + 1}`}
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        onError={(e) => {
+          if (imageSrc === cloudinaryUrl && imagekitUrl) {
+            setImageSrc(imagekitUrl);
+          }
+        }}
       />
     </div>
   );
@@ -97,10 +122,10 @@ const C1ContactGallery = () => {
       <section className="max-w-7xl mx-auto px-4 mb-20">
         <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl shadow-xl p-8 md:p-12">
           <h2 className="text-4xl font-bold text-emerald-700 mb-8 text-center">
-            📸 **TORA** Photo Gallery
+            📸 TORA Photo Gallery
           </h2>
           <p className="text-center text-slate-600 mb-8 text-lg">
-            Explore our **TORA E-SCOOTY** models and key features in detail.
+            Explore our TORA E-SCOOTY models and key features in detail.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">

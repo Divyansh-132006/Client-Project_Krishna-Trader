@@ -67,7 +67,7 @@ const KRISHNAEVEHICLETRADERS = () => {
   const imagekitUrl1 = 'https://ik.imagekit.io/h5k64whau/Cloudinary_Archive_2025-12-31_13_57_15_Originals/krishna_zlyxib%20(1).mp4'
 
 
-  const videoSrc1 = VideoHandler({ CloudinaryUrl: cloudinaryUrl1, imagekitUrl: imagekitUrl1 });
+  const videoSrc1 = VideoHandler({ cloudinaryUrl: cloudinaryUrl1, imagekitUrl: imagekitUrl1 });
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans">
