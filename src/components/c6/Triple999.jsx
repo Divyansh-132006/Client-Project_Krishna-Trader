@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Search, X, Info, Phone, Mail, Filter, Package, ChevronRight } from 'lucide-react';
 
-// Assets
 import bearing from '../../assets/triple9/bearing.png';
 import brake from '../../assets/triple9/brake.png';
 import brakeshoe from '../../assets/triple9/brakeshoe.png';
@@ -162,7 +161,6 @@ const Triple9 = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-10">
-          {/* Sidebar */}
           <aside className="lg:w-64 flex-shrink-0 space-y-8">
             <div>
               <div className="flex items-center gap-2 text-stone-900 font-bold mb-4">
@@ -197,7 +195,6 @@ const Triple9 = () => {
             </div>
           </aside>
 
-          {/* Product Grid */}
           <div className="flex-1">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
               {filteredAndSortedProducts.map((product) => (
@@ -241,11 +238,9 @@ const Triple9 = () => {
         </div>
       </div>
 
-      {/* Product Detail Modal */}
       {selectedProduct && (
         <div className="fixed inset-0 bg-stone-900/60 backdrop-blur-sm flex items-center justify-center z-[100] p-4 animate-in fade-in duration-300">
           <div className="bg-white rounded-[2rem] max-w-5xl w-full overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh]">
-            {/* Modal Image Area */}
             <div className="md:w-1/2 bg-stone-100 p-12 flex items-center justify-center relative">
               <button 
                 onClick={() => setSelectedProduct(null)}
@@ -256,7 +251,6 @@ const Triple9 = () => {
               <img src={selectedProduct.image} alt={selectedProduct.name} className="w-full h-full object-contain mix-blend-multiply" />
             </div>
 
-            {/* Modal Content Area */}
             <div className="md:w-1/2 p-8 md:p-12 overflow-y-auto">
               <div className="flex justify-between items-start mb-6">
                 <div>
@@ -273,7 +267,6 @@ const Triple9 = () => {
                 </button>
               </div>
 
-              {/* Tabs */}
               <div className="flex gap-6 border-b border-stone-100 mb-6">
                 {['description', 'specs'].map(tab => (
                   <button

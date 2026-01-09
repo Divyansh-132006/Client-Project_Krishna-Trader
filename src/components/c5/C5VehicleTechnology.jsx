@@ -1,13 +1,11 @@
 import React from 'react';
 import { imageFeaturesData } from './C5Data';
-// Image imports from the original file (path adjusted)
 import tyreImage from "../../assets/auto/frontview.png";
 import headlightImage from "../../assets/auto/lowerview.png";
 import tailLightImage from "../../assets/auto/backview.png";
 import shockersImage from "../../assets/auto/sideview.png";
 
 
-// Helper to map keys to actual imported images
 const imageMap = {
     tyre: tyreImage,
     headlight: headlightImage,
@@ -21,7 +19,6 @@ export function C5VehicleTechnology() {
       <div
         className="relative bg-cover bg-center rounded-2xl shadow-2xl p-8 md:p-12"
         style={{
-          // Placeholder styling
           backgroundImage: "url('/placeholder-dark-scooter-bg.jpg')",
           backgroundColor: 'rgba(0, 0, 0, 0.7)',
           backgroundBlendMode: 'multiply',

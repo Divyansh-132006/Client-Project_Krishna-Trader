@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap } from 'lucide-react'; // Example icon
+import { Zap } from 'lucide-react'; 
 
 const ProductTable = ({ title, data, icon: Icon }) => (
   <div className="mb-12">
@@ -10,7 +10,6 @@ const ProductTable = ({ title, data, icon: Icon }) => (
       <h3 className="text-2xl font-bold text-slate-900">{title}</h3>
     </div>
     
-    {/* Desktop Table View */}
     <div className="hidden md:block overflow-hidden rounded-2xl shadow-lg border border-slate-200">
       <table className="min-w-full divide-y divide-slate-200">
         <thead className="bg-gradient-to-r from-teal-600 to-teal-700">
@@ -38,7 +37,6 @@ const ProductTable = ({ title, data, icon: Icon }) => (
       </table>
     </div>
 
-    {/* Mobile Card View */}
     <div className="md:hidden space-y-4">
       {data.map((item, i) => (
         <div key={i} className="bg-white rounded-xl shadow-lg border border-slate-200 p-5 space-y-3">

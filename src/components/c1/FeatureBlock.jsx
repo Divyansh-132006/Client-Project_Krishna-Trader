@@ -1,4 +1,3 @@
-// src/components/company1/FeatureBlock.jsx
 import React from "react";
 
 const FeatureBlock = ({ title, description, highlight, img, reverse }) => {
@@ -8,7 +7,6 @@ const FeatureBlock = ({ title, description, highlight, img, reverse }) => {
         reverse ? "md:flex-row-reverse" : ""
       }`}
     >
-      {/* Text Section */}
       <div className="w-full md:w-2/3">
         <h3 className="text-2xl font-bold text-green-700 mb-3">{title}</h3>
         <p className="text-lg leading-relaxed text-gray-700">
@@ -17,7 +15,6 @@ const FeatureBlock = ({ title, description, highlight, img, reverse }) => {
         </p>
       </div>
 
-      {/* Image Section */}
       <div className="w-full md:w-1/3 flex justify-center">
         {img ? (
           <img

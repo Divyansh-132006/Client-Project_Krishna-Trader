@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
 
-// --- IMAGE IMPORTS ---
-// Assuming these paths are correct relative to your project root or defined in Company3
+
 import one from '../../assets/bgtop/rooftop.png';
 // import two from '../../assets/bgtop/image.png';
 import three from '../../assets/bgtop/image.png';

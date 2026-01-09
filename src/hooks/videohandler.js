@@ -5,11 +5,9 @@ function useVideoHandler({ cloudinaryUrl, imagekitUrl }) {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    // Reset error state when cloudinaryUrl changes
     setError(false);
     setVideoSrc(cloudinaryUrl);
 
-    // Create a video element to test if the video loads
     const video = document.createElement('video');
     video.preload = 'metadata';
     video.src = cloudinaryUrl;
@@ -23,7 +21,6 @@ function useVideoHandler({ cloudinaryUrl, imagekitUrl }) {
       setError(true);
     };
 
-    // Cleanup
     return () => {
       video.onloadedmetadata = null;
       video.onerror = null;

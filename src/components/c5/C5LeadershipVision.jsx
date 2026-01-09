@@ -28,7 +28,6 @@ export function C5LeadershipVision() {
         </blockquote>
       </section>
 
-      {/* Company Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
         {companyStats.map((stat, index) => (
           <C5StatCard key={index} value={stat.value} label={stat.label} />

@@ -50,7 +50,6 @@ const GYInternationalProducts = () => {
 
   return (
     <div className="min-h-screen bg-[#fcfcfb]">
-      {/* --- Visual Hero Section --- */}
       <div className="relative bg-[#1a1a1a] py-20 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
           <div className="absolute top-10 left-10 w-64 h-64 bg-amber-500 rounded-full blur-[120px]"></div>
@@ -71,12 +70,10 @@ const GYInternationalProducts = () => {
         </div>
       </div>
 
-      {/* --- Filter Bar --- */}
       <div className="sticky top-[72px] z-40 bg-white/80 backdrop-blur-md border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             
-            {/* Brand Switcher */}
             <div className="flex items-center p-1 bg-stone-100 rounded-xl w-full md:w-auto">
               {brands.map((b) => (
                 <button
@@ -95,7 +92,6 @@ const GYInternationalProducts = () => {
               ))}
             </div>
 
-            {/* Category Scroll */}
             <div className="flex items-center gap-2 overflow-x-auto no-scrollbar w-full md:w-auto pb-2 md:pb-0">
               <Layers className="w-4 h-4 text-stone-400 hidden md:block" />
               {categories.map((cat) => (
@@ -116,7 +112,6 @@ const GYInternationalProducts = () => {
         </div>
       </div>
 
-      {/* --- Results Grid --- */}
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-sm font-black text-stone-400 uppercase tracking-[0.3em] flex items-center gap-2">
@@ -149,13 +144,11 @@ const GYInternationalProducts = () => {
   );
 };
 
-// --- Sub-Component: Product Card ---
 const ProductCard = ({ product }) => {
   const isCY = product.brand === 'CY';
 
   return (
     <div className="group bg-white rounded-2xl border border-stone-200 hover:border-stone-900 transition-all duration-500 overflow-hidden flex flex-col">
-      {/* Image Container */}
       <div className="aspect-square bg-stone-50 p-6 relative overflow-hidden flex items-center justify-center">
         <div className={`absolute top-4 left-4 z-10 px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-tighter ${
           isCY ? 'bg-amber-400 text-black' : 'bg-stone-900 text-white'

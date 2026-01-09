@@ -208,7 +208,6 @@ const Bajaj = () => {
               </div>
             </div>
 
-            {/* Info Card */}
             <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-lg p-6 text-white">
               <h3 className="font-bold text-lg mb-2">Need Help?</h3>
               <p className="text-sm text-blue-100 mb-4">
@@ -220,9 +219,7 @@ const Bajaj = () => {
             </div>
           </div>
 
-          {/* Main Content */}
           <div className="flex-1">
-            {/* Sort By */}
             <div className="flex justify-between items-center mb-6">
               <div className="text-gray-600 text-sm">
                 Showing <span className="font-semibold text-blue-600">{sortedProducts.length}</span> products
@@ -237,7 +234,6 @@ const Bajaj = () => {
               </select>
             </div>
 
-            {/* Products Grid */}
             {sortedProducts.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {sortedProducts.map((product) => (

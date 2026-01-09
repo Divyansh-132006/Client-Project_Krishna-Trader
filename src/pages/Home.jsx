@@ -15,7 +15,6 @@ const HomePage = () => {
   const cloudinaryUrl2 = 'https://res.cloudinary.com/ddiyjetob/video/upload/v1767198881/videoplayback-online-video-cutte_hqrxal_uwgdgf.webm';
   const imagekitUrl2 = 'https://ik.imagekit.io/h5k64whau/Cloudinary_Archive_2025-12-31_13_57_15_Originals/videoplayback-online-video-cutte_hqrxal.webm/ik-video.mp4?updatedAt=1767171033726';
 
-  // Use hooks properly - pass single object with both URLs
   const videoSrc1 = useVideoHandler({ cloudinaryUrl: cloudinaryUrl1, imagekitUrl: imagekitUrl1 });
   const videoSrc2 = useVideoHandler({ cloudinaryUrl: cloudinaryUrl2, imagekitUrl: imagekitUrl2 });
 

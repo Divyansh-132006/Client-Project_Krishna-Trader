@@ -1,47 +1,47 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import { Helmet } from 'react-helmet';
 const companies = [
-  {
-    emoji: "🛵",
-    title: "SHRI SHYAM ENTERPRISES",
-    description: "Built for Indian roads, powered by world-class technology.",
-    slogan: "Power, Style, and Dealership Trust – TORA",
-    link: "/shrishyamenterprises",
-    label: "EV"
-  },
-  {
-    emoji: "🌍",
-    title: "PRINCE GLOBAL COMPANY",
-    description: "The largest wholesaler of high-quality spare parts for electric and conventional vehicles.",
-    slogan: "The right part for every vehicle, at the right time.",
-    link: "/princeglobalcompany",
-    label: "RT"
-  },
-  {
-    emoji: "🔋",
-    title: "KRISHNA E-VEHICLE TRADERS",
-    description: "Leading commercial hub for Electric Mobility (EV) and Solar Systems in Chandausi (Sambhal).",
-    slogan: "Comprehensive energy solutions for a sustainable future.",
-    link: "/krishnaevehicletraders",
-    label: "PE"
-  },
-  {
-    emoji: "⚡",
-    title: "KRISHNA POWER SOLUTION",
-    description: "India's reliable name in power, technology, and global trade.",
-    slogan: "Integrated solutions in EV manufacturing, International Trading, Industrial Services, and Government Projects.",
-    link: "/krishnapowersolutionprivatelimited",
-    label: "GB"
-  },
-  {
-    emoji: "🛺",
-    title: "KRISHNA E-RICKSHAW ENTERPRISES",
-    description: "Manufacturing sustainable, safe, and high-performance electric rickshaws.",
-    slogan: "India's Roads, India's Strength — Building the Future of Transportation.",
-    link: "/krishnaerickshawenterprises",
-    label: "ER"
-  }
+    {
+        emoji: "🛵",
+        title: "SHRI SHYAM ENTERPRISES",
+        description: "Built for Indian roads, powered by world-class technology.",
+        slogan: "Power, Style, and Dealership Trust – TORA",
+        link: "/shrishyamenterprises",
+        label: "EV"
+    },
+    {
+        emoji: "🌍",
+        title: "PRINCE GLOBAL COMPANY",
+        description: "The largest wholesaler of high-quality spare parts for electric and conventional vehicles.",
+        slogan: "The right part for every vehicle, at the right time.",
+        link: "/princeglobalcompany",
+        label: "RT"
+    },
+    {
+        emoji: "🔋",
+        title: "KRISHNA E-VEHICLE TRADERS",
+        description: "Leading commercial hub for Electric Mobility (EV) and Solar Systems in Chandausi (Sambhal).",
+        slogan: "Comprehensive energy solutions for a sustainable future.",
+        link: "/krishnaevehicletraders",
+        label: "PE"
+    },
+    {
+        emoji: "⚡",
+        title: "KRISHNA POWER SOLUTION",
+        description: "India's reliable name in power, technology, and global trade.",
+        slogan: "Integrated solutions in EV manufacturing, International Trading, Industrial Services, and Government Projects.",
+        link: "/krishnapowersolutionprivatelimited",
+        label: "GB"
+    },
+    {
+        emoji: "🛺",
+        title: "KRISHNA E-RICKSHAW ENTERPRISES",
+        description: "Manufacturing sustainable, safe, and high-performance electric rickshaws.",
+        slogan: "India's Roads, India's Strength — Building the Future of Transportation.",
+        link: "/krishnaerickshawenterprises",
+        label: "ER"
+    }
 ];
 
 const benefits = [
@@ -73,19 +73,19 @@ const BusinessContent = ({ company }) => {
                     <span className="text-xs font-bold text-amber-700 uppercase tracking-wider">{company.label}</span>
                 </div>
             </div>
-            
+
             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-3 sm:mb-4 leading-tight">
                 {company.title}
             </h3>
-            
+
             <p className="text-base sm:text-lg text-amber-700 font-semibold mb-3 sm:mb-4 leading-relaxed">
                 {company.slogan}
             </p>
-            
+
             <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                 {company.description}
             </p>
-            
+
             <a
                 href={company.link}
                 className="inline-flex items-center px-5 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base font-semibold rounded-full text-white bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
@@ -100,6 +100,7 @@ const BusinessContent = ({ company }) => {
 function BusinessLanding() {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
 
     useEffect(() => {
         if (!isAutoPlaying) return;
@@ -126,11 +127,47 @@ function BusinessLanding() {
         setActiveIndex(index);
     };
 
+    const seoData = {
+        title: "Krishna Group Business Divisions | 5 Companies Driving India's E-Mobility Revolution",
+        description: "Explore Krishna Group's 5 specialized businesses: Shri Shyam Enterprises (EV), Prince Global (Trading), Krishna E-Vehicle Traders (Parts), Krishna Power Solution (Services), and Krishna E-Rickshaw Enterprises. Comprehensive electric vehicle manufacturing and distribution network.",
+        keywords: "Krishna Group businesses, electric vehicle companies India, e-rickshaw manufacturers, EV parts suppliers, electric scooter brands, sustainable mobility solutions, green transportation India",
+        url: "https://www.krishnagroup.com/business"
+    };
+
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Corporation",
+        "name": "Krishna Group",
+        "description": seoData.description,
+        "url": seoData.url,
+        "numberOfEmployees": "500+",
+        "department": [
+            {
+                "@type": "Organization",
+                "name": "Shri Shyam Enterprises",
+                "description": "Built for Indian roads, powered by world-class technology"
+            },
+            {
+                "@type": "Organization",
+                "name": "Prince Global Company",
+                "description": "The largest wholesaler of high-quality spare parts"
+            }
+
+        ]
+    };
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-yellow-100">
             <div className="container mx-auto px-6">
-                
-                {/* Header Section */}
+                <Helmet>
+                    <title>{seoData.title}</title>
+                    <meta name="description" content={seoData.description} />
+                    <meta name="keywords" content={seoData.keywords} />
+                    <link rel="canonical" href={seoData.url} />
+                    <meta property="og:title" content={seoData.title} />
+                    <meta property="og:description" content={seoData.description} />
+                    <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+                </Helmet>
                 <header className="text-center mb-20">
                     <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
                         Unlock Your
@@ -144,7 +181,6 @@ function BusinessLanding() {
                     </p>
                 </header>
 
-                {/* Interactive Businesses Carousel */}
                 <section className="mb-24">
                     <div className="text-center mb-12">
                         <h2 className="text-4xl font-bold text-gray-900 mb-3">Our Businesses</h2>
@@ -153,8 +189,7 @@ function BusinessLanding() {
 
                     <div className="max-w-6xl mx-auto">
                         <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
-                            
-                            {/* Navigation Buttons */}
+
                             <button
                                 onClick={handlePrevious}
                                 className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 text-2xl font-bold text-gray-800"
@@ -162,7 +197,7 @@ function BusinessLanding() {
                             >
                                 ‹
                             </button>
-                            
+
                             <button
                                 onClick={handleNext}
                                 className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 text-2xl font-bold text-gray-800"
@@ -171,35 +206,31 @@ function BusinessLanding() {
                                 ›
                             </button>
 
-                            {/* Content Slider */}
                             <div className="relative h-96 overflow-hidden">
                                 {companies.map((company, index) => (
                                     <div
                                         key={index}
-                                        className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                                            index === activeIndex
-                                                ? 'translate-x-0 opacity-100'
-                                                : index < activeIndex
+                                        className={`absolute inset-0 transition-all duration-700 ease-in-out ${index === activeIndex
+                                            ? 'translate-x-0 opacity-100'
+                                            : index < activeIndex
                                                 ? '-translate-x-full opacity-0'
                                                 : 'translate-x-full opacity-0'
-                                        }`}
+                                            }`}
                                     >
                                         <BusinessContent company={company} />
                                     </div>
                                 ))}
                             </div>
 
-                            {/* Dot Indicators */}
                             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-3">
                                 {companies.map((_, index) => (
                                     <button
                                         key={index}
                                         onClick={() => handleDotClick(index)}
-                                        className={`transition-all duration-300 rounded-full ${
-                                            index === activeIndex
-                                                ? 'w-8 h-3 bg-amber-600'
-                                                : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
-                                        }`}
+                                        className={`transition-all duration-300 rounded-full ${index === activeIndex
+                                            ? 'w-8 h-3 bg-amber-600'
+                                            : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
+                                            }`}
                                         aria-label={`Go to business ${index + 1}`}
                                     />
                                 ))}
@@ -208,7 +239,6 @@ function BusinessLanding() {
                     </div>
                 </section>
 
-                {/* Benefits Section */}
                 <section className="mb-24">
                     <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         {benefits.map((benefit, index) => (
@@ -230,7 +260,7 @@ function BusinessLanding() {
                     </div>
                 </section>
 
-              
+
                 <section>
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-gray-900 mb-3">

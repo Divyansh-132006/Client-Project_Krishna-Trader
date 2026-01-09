@@ -21,7 +21,6 @@ const allBrands = [
 ];
 
 const BrandScroller = () => {
-  // Duplicating the list ensures a seamless, infinite scroll effect
   const items = [...allBrands, ...allBrands]; 
 
   return (
@@ -40,8 +39,7 @@ const BrandScroller = () => {
         </div>
 
         <div className="relative overflow-hidden">
-          {/* Note: The 'animate-logo-scroll' class and @keyframes must be included 
-              for this component to work as intended. */}
+       
           <div className="flex items-center space-x-16 animate-logo-scroll">
             {items.map((brand, i) => (
               <div

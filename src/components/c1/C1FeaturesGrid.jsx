@@ -30,7 +30,6 @@ const moreAboutFeatures = [
 
 
 const imageFeatures = [
-    // Assign the imported variables (which hold the final, hashed path) to src
     { src: one1, title: "Tubeless Tyres", subtitle: "With You Through Every Turn !" },
     { src: two2, title: "Headlights", subtitle: "Twin Projector Lamp With DRL" },
     { src: three3, title: "Tail lights", subtitle: "We got your back!" },
@@ -47,7 +46,6 @@ const C1FeaturesGrid = () => (
       </h2>
     </div>
 
-    {/* Smart Features Grid */}
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
       {moreAboutFeatures.map((feature, idx) => (
         <div key={idx} className="group text-center bg-white rounded-2xl p-6 shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-emerald-300">
@@ -59,7 +57,6 @@ const C1FeaturesGrid = () => (
       ))}
     </div>
 
-    {/* Image Features Grid */}
     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
       {imageFeatures.map((item, idx) => (
         <div key={idx} className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">

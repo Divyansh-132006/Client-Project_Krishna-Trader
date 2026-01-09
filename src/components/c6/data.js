@@ -1,9 +1,5 @@
-// src/components/c6/data.js
 
 import { Users, Package, Star } from 'lucide-react';
-
-// --- Reusable Data Definitions ---
-
 export const electricVehiclesData = [
   { brand: 'SAI', specialization: 'E-Scooty & E-Rickshaw Parts', features: 'Known for long life and excellent performance.' },
   { brand: 'CY GOLD', specialization: 'Electric Vehicle Parts', features: 'Reliability, strong fitting, and high-grade materials.' },
@@ -44,7 +40,6 @@ export const keyMetrics = [
 
 
 
-// Re-exporting the Product Categories Data for SAI and CY GOLD for clean access.
 export const saiControllerCount = 6;
 export const saiBrakeSystemCount = 6;
 export const saiPartsRangeCount = 8;

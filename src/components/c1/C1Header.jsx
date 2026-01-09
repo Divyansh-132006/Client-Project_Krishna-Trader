@@ -10,7 +10,6 @@ const featuresData = [
 
 const C1Header = ({ handleDealershipClick }) => (
   <header className="relative bg-gradient-to-br from-violet-600 via-fuchsia-500 to-orange-500 text-white overflow-hidden">
-    {/* Background effects */}
     <div className="absolute inset-0 bg-black opacity-10"></div>
     <div className="absolute inset-0" style={{
       backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%)'
@@ -37,7 +36,6 @@ const C1Header = ({ handleDealershipClick }) => (
       </div>
     </div>
 
-    {/* Quick Features */}
     <div className="max-w-7xl mx-auto px-4 -mt-12 mb-16 relative z-20">
       <div className="bg-white rounded-3xl shadow-2xl p-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

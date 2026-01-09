@@ -28,7 +28,6 @@ export function C5OEMContact() {
         </ul>
       </section>
 
-      {/* Contact & Location */}
       <section id="contact" className="bg-white rounded-xl shadow-lg p-8 mb-8 hover:shadow-xl transition-shadow duration-300">
         <h2 className="text-3xl font-bold text-gray-900 mb-8">9. Contact & Location</h2>
 

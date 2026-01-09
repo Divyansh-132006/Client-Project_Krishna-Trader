@@ -19,7 +19,6 @@ const Navbar = () => {
   const imagekitUrl = 'https://ik.imagekit.io/h5k64whau/Cloudinary_Archive_2025-12-31_13_57_15_Originals/WhatsApp_Image_2025-12-07_at_22.17.36_7cc7f070-removebg-preview_lzqzbx.png?updatedAt=1767171026483';
   const cloudinaryUrl = 'https://res.cloudinary.com/ddiyjetob/image/upload/v1767198882/WhatsApp_Image_2025-12-07_at_22.17.36_7cc7f070-removebg-preview_lzqzbx_qfqlnr.png';
 
-  // Use the hook properly - call it directly, not as a function with an object
   const imageSrc = useImageHandler({cloudinaryUrl}, {imagekitUrl});
 
   return (
@@ -53,7 +52,6 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={toggleMobileMenu}
           className="md:hidden p-2 rounded-lg transition-colors duration-300 hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-yellow-400/50"
@@ -76,7 +74,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className={`md:hidden bg-black/30 backdrop-blur-md border-t border-black/30 overflow-hidden transition-all duration-400 ease-in-out ${
           mobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"

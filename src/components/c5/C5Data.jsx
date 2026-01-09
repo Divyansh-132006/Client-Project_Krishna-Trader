@@ -2,9 +2,7 @@ import {
   Shield, Settings, Zap, Truck, Users, TrendingUp, Star, Award, CheckCircle, Factory, Globe, Phone, Mail, MapPin, Wrench
 } from 'lucide-react';
 
-// NOTE: Image imports must be handled in C5CompanyPage.jsx or C5VehicleTechnology.jsx,
-// as they use relative paths that won't resolve correctly here. We will use placeholders.
-// import tyreImage from "../assets/auto/frontview.png";
+
 
 export const coreStrengths = [
   { icon: Shield, title: "Strong Chassis", desc: "High-grade iron construction that withstands up to 500kg load" },
@@ -33,7 +31,6 @@ export const salesStats = [
   { number: "98%", label: "Customer Satisfaction", icon: Star }
 ];
 
-// Data for Vehicle Technology section
 export const imageFeaturesData = [
   { title: "", subtitle: "", width: 400, height: 400, key: 'tyre' },
   { title: "", subtitle: "", width: 300, height: 250, key: 'headlight' },

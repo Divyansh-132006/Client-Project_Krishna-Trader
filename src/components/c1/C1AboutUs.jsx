@@ -3,7 +3,6 @@ import { Check } from 'lucide-react';
 
 const C1AboutUs = ({ kg }) => (
   <>
-    {/* About Section */}
     <section className="max-w-7xl mx-auto px-4 mb-20">
       <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -37,7 +36,6 @@ const C1AboutUs = ({ kg }) => (
       </div>
     </section>
 
-    {/* Leadership */}
     <section className="max-w-7xl mx-auto px-4 mb-20">
       <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 md:p-12 border border-blue-100">
         <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
@@ -56,7 +54,6 @@ const C1AboutUs = ({ kg }) => (
       </div>
     </section>
 
-    {/* Vision */}
     <section className="max-w-7xl mx-auto px-4 mb-20">
       <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
         <div className="text-center mb-12">

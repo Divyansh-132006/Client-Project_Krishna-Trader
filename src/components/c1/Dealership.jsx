@@ -40,7 +40,6 @@ const Dealership = () => {
             India's Fastest Growing Electric Scooter Network
           </p>
 
-          {/* Description */}
           <div className="mt-8 p-6 bg-black/30 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-black/40 transition-all duration-300">
             <p className="text-base md:text-lg leading-relaxed text-gray-100">
               Join India's fastest-growing electric two-wheeler revolution. TORA Automotive, headquartered in 
@@ -49,14 +48,12 @@ const Dealership = () => {
             </p>
           </div>
 
-          {/* CTA Banner */}
           <div className="mt-6 p-4 border-2 border-green-400/50 rounded-xl backdrop-blur-sm hover:border-green-400 hover:scale-[1.02] transition-all duration-300 cursor-pointer group">
             <p className="text-white font-bold text-lg group-hover:text-green-300 transition-colors">
               ⚡ Ready to Electrify Your Business? Fill the Form to Apply for Dealership →
             </p>
           </div>
 
-          {/* Key Stats Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
             <div className="p-6  border border-green-400/30 rounded-xl backdrop-blur-sm hover:scale-105 transition-all duration-300 group">
               <TrendingUp className="w-10 h-10 text-green-400 mx-auto mb-3 group-hover:scale-110 transition-transform" />

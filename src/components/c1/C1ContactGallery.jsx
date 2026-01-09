@@ -28,7 +28,6 @@ const galleryImages = [
   { cloudinary: cloudinaryimage6, imagekit: imagekitimage6 }
 ];
 
-// Image component that handles fallback
 const GalleryImage = ({ cloudinaryUrl, imagekitUrl, index }) => {
   const [imageSrc, setImageSrc] = React.useState(cloudinaryUrl);
   const [error, setError] = React.useState(false);
